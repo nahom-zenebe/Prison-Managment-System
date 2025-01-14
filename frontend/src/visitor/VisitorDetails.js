@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaWindowClose } from "react-icons/fa";
-import { useReactToPrint } from 'react-to-print';
+
 import { toast } from 'react-toastify';
 import './CssFiles/AllViews.css';
 import logo from '../img/logopr.png'
@@ -59,11 +59,7 @@ const VisitorDetails = ({ isOpen, onClose, refreshList, visitorId }) => {
         return dateOfVisit.substring(0, 10);
     }
 
-    // Function to handle printing
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-    });
-
+   
 
 
     return (
@@ -118,8 +114,8 @@ const VisitorDetails = ({ isOpen, onClose, refreshList, visitorId }) => {
                             </div>
                         </div>
                         <div style={{ display: 'flex', gap: '10px', justifyContent: "space-around", marginTop: "20px" }}>
-                            <button onClick={handlePrint} className='v-print-button' style={{ backgroundColor: 'red' }}>Print</button>
-                            <button onClick={handleDelete} className='v-print-button'>Delete</button>
+                            <button  className='v-print-button' style={{ backgroundColor: 'red' }}>Print</button>
+                            <button  className='v-print-button'>Delete</button>
                         </div>
                     </div>
                 ) : (

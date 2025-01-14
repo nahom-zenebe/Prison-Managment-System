@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaWindowClose } from "react-icons/fa";
-import { useReactToPrint } from 'react-to-print';
+
 import logo from '../../img/logopr.png'
 import sl from '../../img/sl.png'
 
@@ -28,10 +28,7 @@ const ViewIncident = ({ isOpen, onClose, refreshList, incidentId }) => {
         }
     }
 
-    // Function to handle printing
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-    });
+    
 
     return (
         <div className={`modal-overlay ${isOpen ? 'sec-show' : 'sec-hide'}`}>
@@ -94,7 +91,7 @@ const ViewIncident = ({ isOpen, onClose, refreshList, incidentId }) => {
                             </div>
                         </div>
                         <div>
-                            <button onClick={handlePrint} className='print-button' style={{ backgroundColor: 'red' }}>Print</button>
+                            <button  className='print-button' style={{ backgroundColor: 'red' }}>Print</button>
                         </div>
                     </div>
                 ) : (
