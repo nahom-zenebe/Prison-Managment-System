@@ -9,6 +9,7 @@ const Welcome = () => {
             <h1>Welcome!</h1>
             <p><Link to= "/dash/notes">View  techNotes</Link></p>
             <p><Link to="/dash/users">view User Settings</Link></p>
+ 
         </section>
     )
   return content
