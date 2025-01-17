@@ -1,10 +1,10 @@
 import { Routes,Route } from "react-router-dom";
 
-import Public from "./components/Public";
+
 import Login from "./features/auth/Login";
 
 import Staff from "./pages/Staff";
-
+import Welcome from './features/auth/Welcome'
 import AddJailor from "./pages/addJailor"
 import JailorList from "./pages/JailorList";
 import UpdateJailor from "./components/UpdateJailor";
@@ -81,7 +81,7 @@ function App() {
     
     <Routes>
       
-        <Route index element={<Public/>}/>
+        <Route path="/" element={<Welcome/>}/>
         <Route path="login" element={<Login/>}/>
         <Route path="staff" element={<Staff/>}/>
         <Route path="Admindashbord" element={<AdminDashboard/>}/>
@@ -155,7 +155,7 @@ function App() {
 
           {/*maintenance */}
 
-          <Route path="/" element={<Home />} />
+          
           <Route path="/mainhome" element={<Home />} />
           <Route path="addTask" element={<AddTask/>} />
           <Route path="/tasks" element={<Tasks />} />

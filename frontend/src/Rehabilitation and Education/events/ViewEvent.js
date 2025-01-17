@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaWindowClose } from "react-icons/fa";
-import { useReactToPrint } from 'react-to-print';
 import { toast } from 'react-toastify';
 import '../css/AllViews.css';
 import logo from '../../img/logopr.png'
@@ -49,10 +48,7 @@ const ViewEvent = ({ isOpen, onClose, refreshList, eventId }) => {
         }
     };
 
-    // Function to handle printing
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-    });
+   
 
     return (
         <div className={`r-add-incident-overlay ${isOpen ? 'r-inci' : 'r-inci-hide'}`}>
@@ -92,8 +88,8 @@ const ViewEvent = ({ isOpen, onClose, refreshList, eventId }) => {
                             </div>
                         </div>
                         <div style={{ display: 'flex', gap: '10px', justifyContent: "space-around", marginTop: "20px" }}>
-                            <button onClick={handlePrint} className='r-print-button'>Print</button>
-                            <button onClick={handleDelete} style={{ backgroundColor: "red" }} className='r-print-button'>Delete</button>
+                            <button  className='r-print-button'>Print</button>
+                            <button style={{ backgroundColor: "red" }} className='r-print-button'>Delete</button>
                         </div>
                     </div>
                 ) : (
