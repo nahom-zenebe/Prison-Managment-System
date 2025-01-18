@@ -161,6 +161,11 @@ function App() {
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/tasks/:id" element={<UpdateTask />} />
         <Route path="/task" element={<Task />} />
+
+
+
+        <Route path="*" element={<h1>404 found!!!get out</h1>} />
+
       </Routes>
     </div>
   );
