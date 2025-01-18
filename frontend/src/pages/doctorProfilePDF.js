@@ -77,7 +77,7 @@ const DoctorProfilePDF = ({ doctor }) => (
         <View style={styles.section}>
           <Image src={governmentLogo} style={styles.image} />
           <View style={styles.contactussection}>
-            <Text style={styles.content}>Contact Numbers: (+4)114677177 / (+94)114677180 | Address: Prison Headquarters,No. 150,Baseline Road,Colombo</Text>
+          <Text style={styles.content}>Contact Numbers: (+2519)345984 / (+2519)11467718 | Address: Addisababa,Paiasa</Text>
           </View>
           <View style={styles.hr} />
           <Text style={styles.heading}>Jailor Details</Text>

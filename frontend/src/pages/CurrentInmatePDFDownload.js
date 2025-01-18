@@ -125,8 +125,9 @@ const CurrentInmatesPDFDocument = ({ selectedInmate }) => (
           {/* Display the prison logo image */}
           <View style={styles.headersection}>
             <Image source={prisonLogo} style={[styles.image, styles.logoImage]} />
-            <Text style={styles.address}>Prison Headquarters, No.150, Baseline Road, Colombo 09.</Text>
-            <Text style={styles.contact}>+94-11-4677177 / +94-11-4677180.</Text>         
+            <Text style={styles.address}>Prison Headquarters,Address: Addisababa,Paiasa.</Text>
+            <Text style={styles.contact}>(+2519)345984 / (+2519)11467718 </Text> 
+      
           </View>
           <Text style={styles.topic}>--- INMATE DETAILS REPORT ---</Text>
 
