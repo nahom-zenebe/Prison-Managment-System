@@ -96,3 +96,13 @@ body {
 .logbtn:hover {
   background-color: #0056b3;
 }
+p{
+  font-size: 1rem;
+  margin-top: 20px;
+}
+Link{
+  color: #0056b3;
+  text-decoration: underline;
+
+}
+

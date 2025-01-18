@@ -1,18 +1,18 @@
 import React from 'react';
-import { useNavigate,Link } from 'react-router-dom';
-import './Login.css';
+import { Link, useNavigate } from 'react-router-dom';
+import './signup.css';
 import prison_logo from '../../img/prison_logo6.png';
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate('/admindashboard');
+  const handleSignup = () => {
+    navigate('/login');
   };
 
   return (
     <div className="login-container">
-      
+
       <div className="image-text-container">
         <img src={prison_logo} alt="Prison Logo" className="prison-logo" />
         <div className="welcome-text">
@@ -23,7 +23,7 @@ const Login = () => {
 
 
       <div className="login-form-container">
-        <h2>Staff Login</h2>
+        <h2>Staff Signup</h2>
         <input
           type="text"
           placeholder="Username"
@@ -34,12 +34,19 @@ const Login = () => {
           placeholder="Password"
           className="login-inputs"
         /><br />
-        <button className="logbtn" onClick={handleLogin}>Login</button>
+        <select className="role-select">
+          <option value="" disabled selected>Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="Guard">Guard</option>
+          <option value="Warden">Warden</option>
+          <option value="VisitorManager">Visitor Manager</option>
+        </select><br />
+        <button className="logbtn" onClick={handleSignup}>Sign up</button>
 
-        <p>Don't have an account <Link to='/Signup'>Click here</Link></p>
+        <p>Already have an account <Link to='/login'>Click here</Link></p>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

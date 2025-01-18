@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Welcomepage.css';
 import prison_logo from '../../img/prison_logo6.png'
+
 const Welcome = () => {
     return (
         <div className="main-container">
@@ -10,7 +11,7 @@ const Welcome = () => {
                     <h1 className="brand-logo">Prison Management</h1>
                     <nav className="navigation">
                         <Link to="/login" className="nav-item">Login</Link>
-                        <Link to="/register" className="nav-item">Sign Up</Link>
+                        <Link to="/Signup" className="nav-item">Sign Up</Link>
                     </nav>
                 </div>
             </header>

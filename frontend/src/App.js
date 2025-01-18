@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
 import Login from "./features/auth/Login";
+import Signup from './features/auth/Signup';
+
 
 import Staff from "./pages/Staff";
 import Welcome from "./features/auth/Welcome";
@@ -78,6 +80,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="login" element={<Login />} />
+        <Route path="Signup" element={<Signup />} />
         <Route path="staff" element={<Staff />} />
         <Route path="Admindashbord" element={<AdminDashboard />} />
         <Route path="JailorList" element={<JailorList />} />
