@@ -42,4 +42,22 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3500/
+POST http://localhost:3500/auth/signup
+Content-Type: application/json
+
+{
+  "fullname": "John Doe",
+  "username": "abela",
+  "email": "notsomeone@gmaail.com",
+  "password": "something",
+  "confirmpassword": "something"
+}
+
+###
+POST http://localhost:3500/auth/login
+Content-Type: application/json
+
+{
+   "username": "abela",
+    "password": "something",  
+}

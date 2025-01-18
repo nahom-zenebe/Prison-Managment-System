@@ -62,20 +62,7 @@ function AdminNavbar() {
           >
             Inmate Management
           </Menu.Item>
-          <Menu.Item
-            key="/rehabilitationDashboard"
-            className="menuItem"
-            style={{ color: "#d9e1fa" }}
-          >
-            Rehabilitation and Education Management
-          </Menu.Item>
-          <Menu.Item
-            key="/mainsecurity"
-            className="menuItem"
-            style={{ color: "#d9e1fa" }}
-          >
-            Resources Management
-          </Menu.Item>
+
           <Menu.Item
             key="/visitorDashboard"
             className="menuItem"
@@ -96,9 +83,6 @@ function AdminNavbar() {
             style={{ color: "#d9e1fa" }}
           >
             Security Management
-          </Menu.Item>
-          <Menu.Item key="" className="menuItem" style={{ color: "#d9e1fa" }}>
-            Maintenance Management
           </Menu.Item>
         </Menu>
       </div>
