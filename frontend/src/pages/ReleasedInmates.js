@@ -104,6 +104,8 @@ function ReleasedInmates() {
         <div className="container">
             <SideNavbar />
             <Content />
+            
+<div>
             <h1 className="releasedInmates">- RELEASED INMATES -</h1>
             <div className="flexContent">
                 <div className="releasedcountContainer">
@@ -334,6 +336,7 @@ function ReleasedInmates() {
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 }

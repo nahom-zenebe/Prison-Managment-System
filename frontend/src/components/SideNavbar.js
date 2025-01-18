@@ -7,7 +7,7 @@ import prisonDepartmentLogo from "../img/prison_logo6.png";
 function SideNavbar({ userName, profilePicture }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [inmatesColor, setInmatesColor] = useState("#000000");
+  const [inmatesColor, setInmatesColor] = useState('#000000');
 
   const handleMenuClick = (key) => {
     navigate(key);
@@ -37,7 +37,7 @@ function SideNavbar({ userName, profilePicture }) {
         mode="vertical"
         onClick={({ key }) => handleMenuClick(key)}
         selectedKeys={[location.pathname]}
-        style={{ backgroundColor: "#4682B4" }}
+        style={{ backgroundColor: "#000" }}
       >
         <Menu.Item className="mainMenu" key="/dashboard">
           Inmate Dashboard
@@ -50,7 +50,7 @@ function SideNavbar({ userName, profilePicture }) {
           <Menu.Item className="subMenu" key="/current">
             Current Inmates
           </Menu.Item>
-          <Menu.Item className="subMenu" key="/released">
+          <Menu.Item  className="subMenu" key="/released">
             Released Inmates
           </Menu.Item>
           <Menu.Item className="subMenu" key="/wanted">

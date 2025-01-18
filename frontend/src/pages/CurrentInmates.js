@@ -144,8 +144,10 @@ function CurrentInmate() {
 
     return (
         <div className="container">
+         
             <SideNavbar />
             <Content />
+            <div>
             <h1 className="currentInmates">- CURRENT INMATES -</h1>
             <div className="flexContent">
                 <div className="countContainer">
@@ -450,6 +452,7 @@ function CurrentInmate() {
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 }

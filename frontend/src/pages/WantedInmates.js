@@ -125,6 +125,7 @@ function WantedInmates(){
         <div className="container">
             <SideNavbar />
             <Content />
+            <div>
             <h1 className="releasedInmates">- WANTED INMATES -</h1>
             <div className="flexContent">
                 <div className="releasedcountContainer">
@@ -387,6 +388,7 @@ function WantedInmates(){
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }
