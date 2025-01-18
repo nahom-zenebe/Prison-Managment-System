@@ -1,19 +1,41 @@
-import React from 'react'
-import { Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Welcomepage.css';
+import prison_logo from '../../img/prison_logo6.png'
+
 const Welcome = () => {
-    const date = new Date()
-    const today = new Intl.DateTimeFormat('en-US',{dateStyle: 'full', timeStyle: 'long'}).format(date)
-    const content =(
-        <section className='welcome'>
-            <p>{today}</p>
-            <h1>Welcome!</h1>
-            <p><Link to= "/dash/notes">View  techNotes</Link></p>
-            <p><Link to="/dash/users">view User Settings</Link></p>
- 
-        </section>
-    )
-  return content
-}
+    return (
+        <div className="main-container">
+            <header className="site-header">
+                <div className="container">
+                    <h1 className="brand-logo">Prison Management</h1>
+                    <nav className="navigation">
+                        <Link to="/login" className="nav-item">Login</Link>
+                        <Link to="/Signup" className="nav-item">Sign Up</Link>
+                    </nav>
+                </div>
+            </header>
+  
+            <section className='main-content'>
+            <img src={prison_logo} alt="side image" />
+                <div className='content-container'>
+                    <h1 className='title-header'>Welcome to our <br></br>Advanced Prison Management System</h1>
+                    <p className="hero-description">
+                        Manage inmate records, staff schedules, and visitor logs efficiently with our secure system.
+                    </p>
+                    <div className='button-container'>
+                        <button className='btn-learn-more'>Learn more</button>
+                        <button className='btn-get-manual'>Get the manual</button>
+                    </div>
+                </div>
+            </section>
+            <footer className="site-footer">
+                <div className="container">
+                    <p>&copy; {new Date().getFullYear()} Prison Management System. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+    );
+};
 
-export default Welcome
-
+export default Welcome;
