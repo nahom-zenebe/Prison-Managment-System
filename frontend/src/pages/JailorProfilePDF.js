@@ -1,6 +1,14 @@
-import React from 'react';
-import { PDFViewer, Document, Page, Text, View, StyleSheet, Image,} from '@react-pdf/renderer';
-import governmentLogo from '../img/prison_logo6.png'; // Assuming the correct path to the image
+import React from "react";
+import {
+  PDFViewer,
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Image,
+} from "@react-pdf/renderer";
+import governmentLogo from "../img/prison_logo6.png"; // Assuming the correct path to the image
 
 const styles = StyleSheet.create({
   section: {
@@ -10,8 +18,8 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 18,
     marginBottom: 10,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
   content: {
     fontSize: 12,
@@ -23,26 +31,25 @@ const styles = StyleSheet.create({
     marginLeft: 50,
   },
   hr: {
-    borderBottomColor: '#000000',
+    borderBottomColor: "#000000",
     borderBottomWidth: 1,
     marginVertical: 10,
   },
   table: {
-    display: 'table',
-    width: 'auto',
-    borderStyle: 'solid',
-    borderColor: '#bfbfbf',
+    display: "table",
+    width: "auto",
+    borderStyle: "solid",
+    borderColor: "#bfbfbf",
     borderWidth: 1,
     borderRightWidth: 0,
     borderBottomWidth: 0,
   },
-  tableRow: { 
-    flexDirection: 'row',
+  tableRow: {
+    flexDirection: "row",
   },
-  tableCell: { 
-    
-    borderStyle: 'solid',
-    borderColor: '#bfbfbf',
+  tableCell: {
+    borderStyle: "solid",
+    borderColor: "#bfbfbf",
     borderWidth: 1,
     borderLeftWidth: 0,
     borderTopWidth: 0,
@@ -50,46 +57,49 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   footer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 30,
     left: 0,
     right: 0,
-    textAlign: 'center',
+    textAlign: "center",
   },
   footerText: {
     fontSize: 10,
   },
-  contactussection:{
+  contactussection: {
     marginHorizontal: 50,
-    textAlign: 'center',
+    textAlign: "center",
   },
-  tableContentHeading:{
-    fontSize:15,
-    backgroundColor:"black",
-    color:'white',
-    padding:5
+  tableContentHeading: {
+    fontSize: 15,
+    backgroundColor: "black",
+    color: "white",
+    padding: 5,
   },
- 
- 
 });
 
 const JailorProfilePDF = ({ jailor }) => (
-  <PDFViewer style={{ width: '100%', height: '100vh' }}>
+  <PDFViewer style={{ width: "100%", height: "100vh" }}>
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
           <Image src={governmentLogo} style={styles.image} />
           <View style={styles.contactussection}>
-            <Text style={styles.content}>Contact Numbers: (+2519)345984 / (+2519)11467718 | Address: Addisababa,Paiasa</Text>
+            <Text style={styles.content}>
+              Contact Numbers: (+2519)345984 / (+2519)11467718 | Address:
+              Addisababa,Paiasa
+            </Text>
           </View>
           <View style={styles.hr} />
           <Text style={styles.heading}>Jailor Details</Text>
           <View style={styles.table}>
-          <View style={styles.tableRow}>
+            <View style={styles.tableRow}>
               <View style={styles.tableCell}>
-                <Text style={styles.tableContentHeading}>Personal Information:</Text>
+                <Text style={styles.tableContentHeading}>
+                  Personal Information:
+                </Text>
               </View>
-              </View>
+            </View>
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
                 <Text style={styles.content}>First Name:</Text>
@@ -136,7 +146,9 @@ const JailorProfilePDF = ({ jailor }) => (
                 <Text style={styles.content}>Emergency Contact Number:</Text>
               </View>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>{jailor.EmergencyContactNumber}</Text>
+                <Text style={styles.content}>
+                  {jailor.EmergencyContactNumber}
+                </Text>
               </View>
             </View>
 
@@ -169,9 +181,11 @@ const JailorProfilePDF = ({ jailor }) => (
 
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
-                <Text style={styles.tableContentHeading}>Employment Details & Qualification and Training Information:</Text>
+                <Text style={styles.tableContentHeading}>
+                  Employment Details & Qualification and Training Information:
+                </Text>
               </View>
-              </View>
+            </View>
 
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
@@ -200,13 +214,14 @@ const JailorProfilePDF = ({ jailor }) => (
               </View>
             </View>
 
-
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
                 <Text style={styles.content}>Educational Background:</Text>
               </View>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>{jailor.EducationalBackground}</Text>
+                <Text style={styles.content}>
+                  {jailor.EducationalBackground}
+                </Text>
               </View>
             </View>
 
@@ -215,7 +230,9 @@ const JailorProfilePDF = ({ jailor }) => (
                 <Text style={styles.content}>Relevant Certifications:</Text>
               </View>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>{jailor.RelevantCertifications}</Text>
+                <Text style={styles.content}>
+                  {jailor.RelevantCertifications}
+                </Text>
               </View>
             </View>
 
@@ -224,15 +241,19 @@ const JailorProfilePDF = ({ jailor }) => (
                 <Text style={styles.content}>Training Courses Completed:</Text>
               </View>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>{jailor.TrainingCoursesCompleted}</Text>
+                <Text style={styles.content}>
+                  {jailor.TrainingCoursesCompleted}
+                </Text>
               </View>
             </View>
 
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
-                <Text style={styles.tableContentHeading}>Uniform and Equipment & Health and Medical Information:</Text>
+                <Text style={styles.tableContentHeading}>
+                  Uniform and Equipment & Health and Medical Information:
+                </Text>
               </View>
-              </View>
+            </View>
 
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
@@ -243,7 +264,6 @@ const JailorProfilePDF = ({ jailor }) => (
               </View>
             </View>
 
-
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
                 <Text style={styles.content}>Issued Equipment:</Text>
@@ -253,13 +273,14 @@ const JailorProfilePDF = ({ jailor }) => (
               </View>
             </View>
 
-
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
                 <Text style={styles.content}>Equipment Training Status:</Text>
               </View>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>{jailor.EquipmentTrainingStatus}</Text>
+                <Text style={styles.content}>
+                  {jailor.EquipmentTrainingStatus}
+                </Text>
               </View>
             </View>
 
@@ -283,41 +304,83 @@ const JailorProfilePDF = ({ jailor }) => (
 
             <View style={styles.tableRow}>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>Emergency Medical Information:</Text>
+                <Text style={styles.content}>
+                  Emergency Medical Information:
+                </Text>
               </View>
               <View style={styles.tableCell}>
-                <Text style={styles.content}>{jailor.EmergencyMedicalInformation}</Text>
+                <Text style={styles.content}>
+                  {jailor.EmergencyMedicalInformation}
+                </Text>
               </View>
             </View>
-           
           </View>
-          <Text style={{marginTop: 50,fontSize:12}}>Remarks :</Text>
-        </View>
-        
-        <View style={styles.footer}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
-        <View style={{ width: '30%', height: 50, borderBottomWidth: 1, borderBottomColor: '#000', marginBottom: 25,marginLeft:10 }}>
-        <Text style={{marginTop: 50,textAlign: 'center',fontSize:12}}>Date</Text>
+          <Text style={{ marginTop: 50, fontSize: 12 }}>Remarks :</Text>
         </View>
 
-    <View style={{ width: '30%', height: 50, borderBottomWidth: 1, borderBottomColor: '#000', marginBottom: 25 }}>
-    <Text style={{marginTop: 50,textAlign: 'center',fontSize:12}}>Head of Prison Department</Text>
-    </View>
-    
-    <View style={{ width: '30%', height: 50, borderBottomWidth: 1, borderBottomColor: '#000', marginBottom: 25 ,marginRight:10}}>
-    <Text style={{marginTop: 50,textAlign: 'center',fontSize:12}}>Commissioner of Prison</Text>
-    </View>
-   
+        <View style={styles.footer}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 20,
+            }}
+          >
+            <View
+              style={{
+                width: "30%",
+                height: 50,
+                borderBottomWidth: 1,
+                borderBottomColor: "#000",
+                marginBottom: 25,
+                marginLeft: 10,
+              }}
+            >
+              <Text
+                style={{ marginTop: 50, textAlign: "center", fontSize: 12 }}
+              >
+                Date
+              </Text>
+            </View>
+
+            <View
+              style={{
+                width: "30%",
+                height: 50,
+                borderBottomWidth: 1,
+                borderBottomColor: "#000",
+                marginBottom: 25,
+              }}
+            >
+              <Text
+                style={{ marginTop: 50, textAlign: "center", fontSize: 12 }}
+              >
+                Head of Prison Department
+              </Text>
+            </View>
+
+            <View
+              style={{
+                width: "30%",
+                height: 50,
+                borderBottomWidth: 1,
+                borderBottomColor: "#000",
+                marginBottom: 25,
+                marginRight: 10,
+              }}
+            >
+              <Text
+                style={{ marginTop: 50, textAlign: "center", fontSize: 12 }}
+              >
+                Commissioner of Prison
+              </Text>
+            </View>
           </View>
-        
-        <View style={styles.hr} />
-          <Text style={styles.footerText}>Contact Numbers: (+4)114677177 / (+94)114677180 | Address: Prison Headquarters,No. 150,Baseline Road,Colombo</Text>
+
+          <View style={styles.hr} />
+          <Text style={styles.footerText}>Location: Addis Ababa, Piassa</Text>
         </View>
       </Page>
-
-      
-        
-     
     </Document>
   </PDFViewer>
 );

@@ -4,6 +4,10 @@
   background-color: #f4f4f4;
 }
 
+.sidebar {
+  margin: 100px;
+}
+
 .sideNavbar {
   position: fixed;
   top: 0;
