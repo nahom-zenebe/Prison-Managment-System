@@ -2,6 +2,8 @@
   margin-left: 320px;
 }
 
+
+
 .closeIcon {
   position: absolute;
   color: #ffffff;
@@ -100,6 +102,7 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: -10px;
+  
 }
 
 .currentInmates {

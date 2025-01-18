@@ -48,7 +48,7 @@ const Signup = () => {
 
 
       <div className="login-form-container">
-        <h2>Staff Signup</h2>
+        <h2> Signup Page</h2>
         <form onSubmit={handleSignup}>
           <input
             type="text"
