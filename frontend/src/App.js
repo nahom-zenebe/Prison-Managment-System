@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./features/auth/Login";
 import Signup from "./features/auth/signup";
 
+import PagenoutFound from './pages/PagenoutFound'
+
 import Staff from "./pages/Staff";
 import Welcome from "./features/auth/Welcome";
 import AddJailor from "./pages/addJailor";
@@ -132,7 +134,7 @@ function App() {
 
 
 
-        <Route path="*" element={<h1>404 found!!!get out</h1>} />
+        <Route path="*" element={<PagenoutFound/>} />
 
       </Routes>
     </div>
