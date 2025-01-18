@@ -40,7 +40,7 @@ function SideNavbar({ userName, profilePicture }) {
         style={{ backgroundColor: "#212459" }}
       >
         <Menu.Item className="mainMenu" key="/dashboard">
-          Inmate Dashboard
+        Inmate Dashboard
         </Menu.Item>
         <Menu.SubMenu
           className="mainMenu"
