@@ -1,29 +1,19 @@
-/* Sidebar styles */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 320px;
-  height: 100vh;
-  overflow-y: auto;
-  background-color: #f4f4f4;
-  z-index: 1000;
+.inmatesTable {
+  margin-left: 320px;
 }
 
-/* Close icon styles */
 .closeIcon {
   position: absolute;
   color: #ffffff;
   cursor: pointer;
   font-weight: bold;
   font-size: 30px;
-  right: 10px;
-  top: 10px;
+  margin-left: 200px;
+  margin-top: -28px;
 }
 
 /* Table styles */
 .inmatesTable {
-  margin-left: 340px; /* Ensure it doesn't overlap the sidebar */
   width: 77%;
   border-collapse: collapse;
   margin-top: 10px;
@@ -44,6 +34,7 @@
   padding: 10px;
   text-align: center;
   width: fit-content;
+  padding-bottom: 5px;
   border: 2px solid #dddddd;
 }
 
@@ -53,7 +44,7 @@
   margin-bottom: 10px;
   width: 120px;
   height: 40px;
-  margin-left: calc(100% - 140px); /* Keeps it to the right */
+  margin-left: 88%;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 18px;
@@ -64,71 +55,87 @@
   font-size: 20px;
 }
 
-.update,
-.delete {
+.update {
   width: 70px;
+  background-color: #4682b4;
+  color: #ffffff;
   font-size: 15px;
   font-weight: bold;
   padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 5px;
   border: none;
 }
 
-.update {
-  background-color: #4682b4;
-  color: #ffffff;
-}
-
 .delete {
+  width: 70px;
   background-color: red;
   color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
 }
 
-.update:hover,
+.update:hover {
+  font-size: 17px;
+}
+
 .delete:hover {
   font-size: 17px;
 }
 
-/* Button column styles */
 .buttonColumn {
   width: 8.8%;
 }
 
-/* Count container styles */
 .countContainer {
   margin-left: 350px;
   margin-top: 50px;
   font-family: sans-serif;
   font-weight: bold;
-  border: 4px solid #89cff0;
+  border: 4px solid #212459;
   border-radius: 5px;
   padding: 10px;
+  margin-bottom: -10px;
 }
 
-/* Current inmates text */
 .currentInmates {
   text-align: center;
   margin-top: 10px;
-  color: #89cff0;
+  color: #212459;
+  margin-left: 300px;
   font-size: 25px;
   font-family: sans-serif;
 }
 
-/* Profile title */
 .profileTitle {
-  color: #89cff0;
+  margin-top: 0px;
+  color: #212459;
+  margin-right: 90px;
   font-size: 25px;
   font-family: sans-serif;
+  margin-left: 170px;
 }
 
-/* Search bar styles */
 .searchBar {
+  width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid #89cff0;
+  border: 2px solid #212459;
   border-radius: 5px;
   font-size: 16px;
+  margin-top: 50px;
   width: 80%;
-  margin: 50px auto; /* Centers the search bar */
+  margin-left: 375px;
+}
+
+.profileContainer {
+  padding-bottom: 12px;
+  border: 1px solid #000000;
+  border-radius: 8px;
 }
 
 .searchContainer {
@@ -137,83 +144,185 @@
 
 .searchIcon {
   position: absolute;
+  margin-top: 16px;
+  margin-left: 900px;
   top: 50%;
-  right: 10px; /* Aligns it inside the search bar */
   transform: translateY(-50%);
   color: #ccc;
 }
 
-/* Profile container */
-.profileContainer {
-  padding-bottom: 12px;
-  border: 1px solid #000000;
-  border-radius: 8px;
+.flexContent {
+  display: flex;
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 
-/* Profile label and value */
+.countNumber {
+  margin-top: 5px;
+}
+
+.image {
+  margin-left: 195px;
+  margin-bottom: 10px;
+  height: 250px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profile-item {
+  display: flex;
+}
+
 .profile-label {
   font-weight: bold;
-  color: #4682b4;
-  margin-left: 20px;
+  width: 205px;
+  color: #212459;
+  margin-left: 50px;
 }
 
 .profile-value {
   margin-left: 5px;
 }
 
-/* Buttons for profiles */
-.updateInmateProfile,
-.deleteInmateProfile,
-.wantedProfile,
-.releasedProfile {
+.updateInmateProfile {
   width: 110px;
+  color: #ffffff;
   font-size: 15px;
   font-weight: bold;
   padding: 8px;
+  margin-bottom: 15px;
+  margin-left: 101px;
+  margin-top: 20px;
+  border: none;
+}
+
+.bottomContainer {
+  margin-left: 60px;
+}
+
+.deleteInmateProfile {
+  width: 110px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: none;
+}
+
+.wantedProfile {
+  width: 210px;
+  background-color: #212459;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: 117px;
   margin-top: 10px;
   border: none;
 }
 
-.updateInmateProfile {
-  background-color: #4682b4;
-  color: #ffffff;
+.wantedProfile:hover {
+  font-size: 16px;
 }
 
-.deleteInmateProfile {
-  background-color: red;
-  color: #ffffff;
-}
-
-.wantedProfile,
 .releasedProfile {
-  background-color: #4682b4;
-  color: #ffffff;
   width: 210px;
+  background-color: #212459;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  margin-left: 117px;
+  margin-top: 10px;
+  border: none;
 }
 
-/* Hover effects */
-.updateInmateProfile:hover,
-.deleteInmateProfile:hover,
-.wantedProfile:hover,
 .releasedProfile:hover {
   font-size: 16px;
 }
 
-/* Flexbox adjustments for alignment */
-.flexContent {
-  display: flex;
-  justify-content: space-between; /* Adjust as needed */
+.updateInmateProfile:hover {
+  font-size: 17px;
 }
 
-/* Clearfix for floated elements */
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+.deleteInmateProfile:hover {
+  font-size: 17px;
 }
 
-/* Fixes overlapping by ensuring vertical stacking */
-.container {
-  display: flex;
-  flex-direction: column;
+.downloadProfile {
+  margin-left: 150px;
+  background-color: #86b6f6;
+  color: #000000;
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 8px;
+  border: none;
+}
+
+.downloadProfile:hover {
+  font-size: 16px;
+  color: #000000;
+  padding: 8px;
+}
+
+.sentence {
+  margin-left: 340px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.subtopic1 {
+  margin-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.subtopic2 {
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.medicalAppointmentButton {
+  width: 250px;
+  background-color: #212459;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: 142px;
+  margin-top: 10px;
+  border: none;
+}
+
+.medicalHistoryTitle {
+  margin-top: 0px;
+  color: #212459;
+  margin-right: 90px;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-left: 120px;
+}
+
+.histroryContainer {
+  border: 1px solid #000000;
+  padding: 10px;
+  border-radius: 8px;
 }
