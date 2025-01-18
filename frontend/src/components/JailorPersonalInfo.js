@@ -23,7 +23,7 @@ function JailorPersonalInfo({ formData, setFormData }) {
         if (!nameRegex.test(value)) {
           setFormData((prevData) => ({
             ...prevData,
-            FirstName: value.replace(/[^a-zA-Z\s]/g, ""), // Remove non-alphabetic characters
+            FirstName: value.replace(/[^a-zA-Z\s]/g, ""),
           }));
         }
         break;
@@ -31,7 +31,7 @@ function JailorPersonalInfo({ formData, setFormData }) {
         if (!nameRegex.test(value)) {
           setFormData((prevData) => ({
             ...prevData,
-            LastName: value.replace(/[^a-zA-Z\s]/g, ""), // Remove non-alphabetic characters
+            LastName: value.replace(/[^a-zA-Z\s]/g, ""),
           }));
         }
         break;
@@ -39,9 +39,11 @@ function JailorPersonalInfo({ formData, setFormData }) {
         if (!nicRegex.test(value)) {
           setFormData((prevData) => ({
             ...prevData,
-            NIC: value.replace(/[^0-9vVxX\s]/g, ""),
+            NIC: value.replace(/[^0-9]/g, "").slice(0, 16),
           }));
         }
+        break;
+
         break;
       case "ContactNumber":
         if (!contactNumberRegex.test(value)) {
@@ -207,10 +209,10 @@ function JailorPersonalInfo({ formData, setFormData }) {
         <option value="" disabled defaultValue>
           Choose an option
         </option>
-        <option value="buddhists">Buddhists</option>
-        <option value="hindus">Hindus</option>
-        <option value="muslims">Muslims</option>
-        <option value="christians">Christians</option>
+        <option value="Orthodox">Orthodox</option>
+        <option value="Muslims">Muslims</option>
+        <option value="Protestant">Protestant</option>
+        <option value="other">other</option>
       </select>
       <br />
       <label className="Addjailor-lable">Gender: </label>

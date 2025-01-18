@@ -83,6 +83,26 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
     return maxDate.toISOString().split("T")[0]; // Format the date as YYYY-MM-DD
   };
 
+  const validateNIC = (_, value) => {
+    const nicRegex = /^[0-9]{16}$/;
+    if (!nicRegex.test(value)) {
+      return Promise.reject(
+        "Invalid NIC format. Please enter a valid NIC with exactly 16 digits."
+      );
+    }
+    return Promise.resolve();
+  };
+
+  const validateContactNumber = (_, value) => {
+    const regex = /^\+94\d{9}$/;
+    if (!regex.test(value)) {
+      return Promise.reject(
+        "Invalid NIC format. Please enter a valid contact number starting with +94."
+      );
+    }
+    return Promise.resolve();
+  };
+
   const getMinDate = () => {
     const currentDate = new Date();
     const minDate = new Date(
@@ -124,26 +144,6 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
       );
     }
 
-    return Promise.resolve();
-  };
-
-  const validateNIC = (_, value) => {
-    const nicRegex = /^[0-9]{9}[vVxX]$|^[0-9]{12}$/;
-    if (!nicRegex.test(value)) {
-      return Promise.reject(
-        "Invalid contact number format. Please enter a valid NIC with 12 numbers or 9 numbers with V or v."
-      );
-    }
-    return Promise.resolve();
-  };
-
-  const validateContactNumber = (_, value) => {
-    const regex = /^\+94\d{9}$/;
-    if (!regex.test(value)) {
-      return Promise.reject(
-        "Invalid NIC format. Please enter a valid contact number starting with +94."
-      );
-    }
     return Promise.resolve();
   };
 

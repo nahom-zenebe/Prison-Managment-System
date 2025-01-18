@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaWindowClose } from "react-icons/fa";
-
+import { useReactToPrint } from "react-to-print";
 import { toast } from "react-toastify";
 import "../visitor/CssFiles/CreateVisit.css";
 import logo from "../img/prison_logo6.png";
@@ -57,6 +57,11 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
     return date.toLocaleDateString();
   };
 
+  // Function to handle printing
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   // Function to handle visit submission
   const visitSubmit = async () => {
     if (!checkoutTime) {
@@ -86,6 +91,8 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
       });
       console.log(response.message);
 
+      // Trigger printing of PDF upon successful visit submission
+      handlePrint();
       onClose();
       // Optionally, you can show a toast notification for successful submission
       toast.success("Visit details saved successfully", {
@@ -154,7 +161,7 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
                   <img width={150} height={150} src={logo} alt="logo" />
                 </div>
                 <h1 style={{ fontFamily: "cursive", marginBottom: "5px" }}>
-                  Federal Prison Department
+                  Sri Lanka Prison Department
                 </h1>
                 <p style={{ marginBottom: "10px" }}>
                   _____________________________________________________________________________________________________________
@@ -247,7 +254,9 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
               </div>
             </div>
             <div className="custom-button-container">
-              <button className="custom-button">Save & Print</button>
+              <button onClick={visitSubmit} className="custom-button">
+                Save & Print
+              </button>
             </div>
           </div>
         ) : (

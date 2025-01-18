@@ -17,7 +17,6 @@ const Summary = () => {
   const getAllVisits = async () => {
     try {
       const res = await axios.get("http://localhost:3500/api/visit");
-      console.log("API Response:", res.data); // Debugging
       setVisits(res.data);
     } catch (error) {
       console.error("Error fetching visits:", error);
@@ -28,7 +27,7 @@ const Summary = () => {
     getAllVisits();
   }, []);
 
-  // Function to format date to YYYY-MM-DD
+  // Function to format date to YYYY-MM-DD without considering time zone
   const formatDate = (date) => {
     const year = date.getFullYear();
     const month = `0${date.getMonth() + 1}`.slice(-2);
@@ -43,11 +42,9 @@ const Summary = () => {
   const lastFiveDays = [];
   for (let i = 0; i < 5; i++) {
     const date = new Date(today);
-    date.setDate(today.getDate() - i);
+    date.setDate(date.getDate() - i);
     lastFiveDays.unshift(formatDate(date));
   }
-
-  console.log("Last 5 Days:", lastFiveDays); // Debugging
 
   // Aggregate counts for each day
   const visitsCount = lastFiveDays.reduce((acc, date) => {
@@ -62,15 +59,11 @@ const Summary = () => {
     }
   });
 
-  console.log("Visits Count:", visitsCount); // Debugging
-
   // Convert aggregated data to an array of objects for recharts
   const data = Object.keys(visitsCount).map((date) => ({
     date,
     count: visitsCount[date],
   }));
-
-  console.log("Chart Data:", data); // Debugging
 
   return (
     <div>
