@@ -23,7 +23,7 @@ const Signup = () => {
       toast.success('Signup successful!')
      
       if (credentials.role === 'Admin') {
-        navigate('/Admindashbord'); 
+        navigate('/admindashboard'); 
       } else if (credentials.role === 'VisitorManager') {
         navigate('/visitorDashboard');
       } else {

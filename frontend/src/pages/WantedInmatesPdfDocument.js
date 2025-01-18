@@ -1,6 +1,6 @@
 import React from 'react';
 import { PDFViewer, Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
-import prisonLogo from '../img/prisonlogo5.png';
+import prisonLogo from '../img/prison_logo6.png';
 
 const styles = StyleSheet.create({
   page: {

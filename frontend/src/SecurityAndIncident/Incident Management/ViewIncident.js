@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 
-import logo from '../../img/logopr.png'
-import sl from '../../img/sl.png'
+import logo from '../../img/prison_logo6.png'
+import sl from '../../img/prison_logo6.png'
 
 const ViewIncident = ({ isOpen, onClose, refreshList, incidentId }) => {
     const [incidentDetails, setIncidentDetails] = useState(null);

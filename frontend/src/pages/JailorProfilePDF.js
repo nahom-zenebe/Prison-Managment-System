@@ -1,6 +1,6 @@
 import React from 'react';
 import { PDFViewer, Document, Page, Text, View, StyleSheet, Image,} from '@react-pdf/renderer';
-import governmentLogo from '../img/prisonlogo5.png'; // Assuming the correct path to the image
+import governmentLogo from '../img/prison_logo6.png'; // Assuming the correct path to the image
 
 const styles = StyleSheet.create({
   section: {

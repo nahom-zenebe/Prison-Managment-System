@@ -2,9 +2,9 @@ import React from "react";
 import Sidebar from "../Sidebar";
 import "./Security.css";
 import { Link } from "react-router-dom";
-import firearmImg from "../Add Security/firearmImg.jpg"
-import nonlethelImg from "../Add Security/nonlethelImg.jpg"
-import protectiveImg from "../Add Security/protectiveImg.jpg"
+import firearmImg from "../../img/prison_logo6.png"
+import nonlethelImg from "../../img/prison_logo6.png"
+import protectiveImg from "../../img/prison_logo6.png"
 
 function Security() {
   return (

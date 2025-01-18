@@ -4,8 +4,8 @@ import { FaWindowClose } from "react-icons/fa";
 
 import { toast } from 'react-toastify';
 import '../visitor/CssFiles/CreateVisit.css';
-import logo from '../img/logopr.png'
-import sl from '../img/sl.png'
+import logo from '../img/prison_logo6.png'
+import sl from '../img/prison_logo6.png'
 
 
 const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {

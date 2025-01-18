@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { FaWindowClose, FaUserCircle } from "react-icons/fa";
 import { useReactToPrint } from 'react-to-print';
 import './ViewSecurityStaff.css';
-import logo from '../img/logopr.png'
-import sl from '../img/sl.png'
+import logo from '../img/prison_logo6.png'
+import sl from '../img/prison_logo6.png'
 
 const ViewSecurityStaff = ({ isOpen, onClose, refreshList, staffId }) => {
     const [staffDetails, setStaffDetails] = useState(null);
