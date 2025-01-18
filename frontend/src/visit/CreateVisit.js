@@ -153,15 +153,14 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
                 <div
                   style={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    justifyContent: "center",
                     width: "80%",
                   }}
                 >
                   <img width={100} height={150} src={sl} alt="logo" />
-                  <img width={150} height={150} src={logo} alt="logo" />
                 </div>
                 <h1 style={{ fontFamily: "cursive", marginBottom: "5px" }}>
-                  Sri Lanka Prison Department
+                  Federal Prison Department
                 </h1>
                 <p style={{ marginBottom: "10px" }}>
                   _____________________________________________________________________________________________________________
