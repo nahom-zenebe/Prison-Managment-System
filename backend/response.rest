@@ -46,11 +46,9 @@ POST http://localhost:3500/auth/signup
 Content-Type: application/json
 
 {
-  "fullname": "John Doe",
-  "username": "abela",
-  "email": "notsomeone@gmaail.com",
+  "username": "abe",
   "password": "something",
-  "confirmpassword": "something"
+  "role": "adimin"
 }
 
 ###
@@ -59,5 +57,5 @@ Content-Type: application/json
 
 {
    "username": "abela",
-    "password": "something",  
+    "password": "something"  
 }

@@ -81,7 +81,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="Signup" element={<Signup />} />
         <Route path="staff" element={<Staff />} />
-        <Route path="Admindashbord" element={<AdminDashboard />} />
+        <Route path="admindashboard" element={<AdminDashboard />} />
         <Route path="JailorList" element={<JailorList />} />
         <Route path="DoctorList" element={<DoctorList />} />
         <Route path="addjailor" element={<AddJailor />} />

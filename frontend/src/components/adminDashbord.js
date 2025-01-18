@@ -171,16 +171,6 @@ function AdminDashboard() {
               Inmate Management
             </Link>
           </div>
-          <div className="admin-main-function">
-            <Link to="/rehabilitationDashboard" className="nav-link">
-              Rehabilitation and Education Management
-            </Link>
-          </div>
-          <div className="admin-main-function">
-            <Link to="/mainsecurity" className="nav-link">
-              Resources Management
-            </Link>
-          </div>
         </div>
         <div className="admin-function-set">
           <div className="admin-main-function">
@@ -191,11 +181,6 @@ function AdminDashboard() {
           <div className="admin-main-function">
             <Link to="/healthcareDashboard" className="nav-link">
               Healthcare Management
-            </Link>
-          </div>
-          <div className="admin-main-function">
-            <Link to="/mainhome" className="nav-link">
-              Maintenance Management
             </Link>
           </div>
           <div className="admin-main-function">
