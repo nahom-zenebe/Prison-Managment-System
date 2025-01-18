@@ -94,10 +94,10 @@ const AddNewVisitor = ({ isOpen, onClose, refreshList }) => {
       if (!visitorData.nic) {
         validationErrors.nic = 'NIC is required';
       } else {
-        const nicRegex = /^(?:\d{12}|(?:\d{9}[xXvV]))$/;
-        if (!nicRegex.test(visitorData.nic)) {
-          validationErrors.nic = 'Invalid NIC format';
-        }
+        const nicRegex = /^\d{16}$/; 
+     if (!nicRegex.test(visitorData.nic)) {
+      validationErrors.nic = 'Invalid NIC format. Please enter exactly 16 digits.';
+}
       }
       if (!visitorData.address) {
         validationErrors.address = 'Address is required';

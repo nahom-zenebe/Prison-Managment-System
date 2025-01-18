@@ -4,6 +4,8 @@ import Login from "./features/auth/Login";
 import Signup from "./features/auth/signup";
 
 import PagenoutFound from './pages/PagenoutFound'
+import { useAuth } from "./hooks/customhook";
+import ProtectedRoute from './components/ProtectedRoute'
 
 import Staff from "./pages/Staff";
 import Welcome from "./features/auth/Welcome";
@@ -72,64 +74,64 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="login" element={<Login />} />
         <Route path="Signup" element={<Signup />} />
-        <Route path="staff" element={<Staff />} />
-        <Route path="admindashboard" element={<AdminDashboard />} />
-        <Route path="JailorList" element={<JailorList />} />
-        <Route path="DoctorList" element={<DoctorList />} />
-        <Route path="addjailor" element={<AddJailor />} />
-        <Route path="/JailorList/:id" element={<UpdateJailor />} />
+        <Route path="staff" element={<ProtectedRoute><Staff /></ProtectedRoute>} />
+        <Route path="admindashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+        <Route path="JailorList" element={<ProtectedRoute><JailorList /></ProtectedRoute>} />
+        <Route path="DoctorList" element={<ProtectedRoute><DoctorList /></ProtectedRoute>} />
+        <Route path="addjailor" element={<ProtectedRoute><AddJailor /></ProtectedRoute>} />
+        <Route path="/JailorList/:id" element={<ProtectedRoute><UpdateJailor /></ProtectedRoute>} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="current" element={<CurrentInmates />} />
-        <Route path="/released" element={<ReleasedInmates />} />
-        <Route path="/wanted" element={<WantedInmates />} />
-        <Route path="/appointments" element={<HealthcareAppointments />} />
-        <Route path="/schedule" element={<InmateSchedule />} />
-        <Route path="/addCurrent" element={<AddCurrentInmate />} />
-        <Route path="/addCurrentAdmission" element={<AddCurrentAdmission />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="current" element={<ProtectedRoute><CurrentInmates /></ProtectedRoute>} />
+        <Route path="/released" element={<ProtectedRoute><ReleasedInmates /></ProtectedRoute>} />
+        <Route path="/wanted" element={<ProtectedRoute><WantedInmates /></ProtectedRoute>} />
+        <Route path="/appointments" element={<ProtectedRoute><HealthcareAppointments /></ProtectedRoute>} />
+        <Route path="/schedule" element={<ProtectedRoute><InmateSchedule /></ProtectedRoute>} />
+        <Route path="/addCurrent" element={<ProtectedRoute><AddCurrentInmate /></ProtectedRoute>} />
+        <Route path="/addCurrentAdmission" element={<ProtectedRoute><AddCurrentAdmission /></ProtectedRoute>} />
 
-        <Route path="/healthcareDashboard" element={<HealthcareDashboard />} />
-        <Route path="/currentAppointments" element={<CurrentAppointments />} />
+        <Route path="/healthcareDashboard" element={<ProtectedRoute><HealthcareDashboard /></ProtectedRoute>} />
+        <Route path="/currentAppointments" element={<ProtectedRoute><CurrentAppointments /></ProtectedRoute>} />
         <Route
           path="/approvedAppointments"
-          element={<ApprovedAppointments />}
+          element={<ProtectedRoute><ApprovedAppointments /></ProtectedRoute>}
         />
-        <Route path="/healthRecords" element={<AllHealthRecords />} />
+        <Route path="/healthRecords" element={<ProtectedRoute><AllHealthRecords /></ProtectedRoute>} />
 
-        <Route path="/Security" element={<Security />} />
-        <Route path="/mainsecurity" element={<Security />} />
+        <Route path="/Security" element={<ProtectedRoute><Security /></ProtectedRoute>} />
+        <Route path="/mainsecurity" element={<ProtectedRoute><Security /></ProtectedRoute>} />
   
-        <Route path="/mainmedical" element={<Medicine />} />
+        <Route path="/mainmedical" element={<ProtectedRoute><Medicine /></ProtectedRoute>} />
 
       
        
        
 
-        <Route path="/securityform" element={<Securityform />} />
+        <Route path="/securityform" element={<ProtectedRoute><Securityform /></ProtectedRoute>} />
 
         {/* update part for firearm*/}
 
        
-        <Route path="/medicinepage/:id" element={<MedicineUpdate />} />
-        <Route path="/medicineform" element={<MedicineForm />} />
+        <Route path="/medicinepage/:id" element={<ProtectedRoute><MedicineUpdate /></ProtectedRoute>} />
+        <Route path="/medicineform" element={<ProtectedRoute><MedicineForm /></ProtectedRoute>} />
  
       
 
         {/* visitor management */}
-        <Route path="/visitorDashboard" element={<VisitorDashboard />} />
-        <Route path="/allVisitors" element={<AllVisitors />} />
-        <Route path="/allVisits" element={<AllVisits />} />
-        <Route path="/summaryChart" element={<Summrychart />} />
+        <Route path="/visitorDashboard" element={<ProtectedRoute><VisitorDashboard /></ProtectedRoute>} />
+        <Route path="/allVisitors" element={<ProtectedRoute><AllVisitors /></ProtectedRoute>} />
+        <Route path="/allVisits" element={<ProtectedRoute><AllVisits /></ProtectedRoute>} />
+        <Route path="/summaryChart" element={<ProtectedRoute><Summrychart /></ProtectedRoute>} />
 
        
         {/* security staff management */}
-        <Route path="/securityStaffDashboard" element={<SecurityDashboard />} />
-        <Route path="/allSecurityStaff" element={<AllSecurityStaff />} />
-        <Route path="/allIncidents" element={<AllIncident />} />
+        <Route path="/securityStaffDashboard" element={<ProtectedRoute><SecurityDashboard /></ProtectedRoute>} />
+        <Route path="/allSecurityStaff" element={<ProtectedRoute><AllSecurityStaff /></ProtectedRoute>} />
+        <Route path="/allIncidents" element={<ProtectedRoute><AllIncident /></ProtectedRoute>} />
 
        
 
-        <Route path="/mainhome" element={<Home />} />
+        <Route path="/mainhome" element={<ProtectedRoute><Home /></ProtectedRoute>} />
         
 
 

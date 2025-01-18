@@ -188,6 +188,8 @@ function AdminDashboard() {
               Security Management
             </Link>
           </div>
+
+          
         </div>
 
         <div className="charts">
@@ -212,7 +214,9 @@ function AdminDashboard() {
             <Bar data={inmatesStatusData} />
           </div>
         </div>
+       
       </div>
+     
     </div>
   );
 }

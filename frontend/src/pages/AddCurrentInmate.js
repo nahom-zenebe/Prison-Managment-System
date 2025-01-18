@@ -105,12 +105,13 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
         
     
     const validateContactNumber = (_, value) => {
-        const regex = /^\+94\d{9}$/;
+        const regex = /^\+2519\d{8}$/; 
         if (!regex.test(value)) {
-            return Promise.reject('Invalid NIC format. Please enter a valid contact number starting with +94.');
+            return Promise.reject('Invalid contact number format. Please enter a valid contact number starting with +2519 followed by 8 digits.');
         }
         return Promise.resolve();
     };
+
 
     const onFinish = (values) => {
         if (validateForm()) {

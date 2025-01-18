@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Menu } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideNavbar.css";
+import { useAuth } from "../hooks/customhook";
 import prisonDepartmentLogo from "../img/prison_logo6.png";
 import "./StaffMenuBar.css";
 
@@ -9,6 +10,16 @@ function AdminNavbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const [staffColor, setStaffColor] = useState("#000000");
+  const {  logout } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+
+    } catch (error) {
+      console.error("Error during logout:", error.message);
+    }
+  };
 
   const handleMenuClick = (key) => {
     navigate(key);
@@ -83,6 +94,15 @@ function AdminNavbar() {
             style={{ color: "#d9e1fa" }}
           >
             Security Management
+          </Menu.Item>
+
+          <Menu.Item
+            key="/"
+            onClick={handleLogout}
+            className="menuItem"
+            style={{ color: "#d9e1fa" }}
+          >
+            logout
           </Menu.Item>
         </Menu>
       </div>
