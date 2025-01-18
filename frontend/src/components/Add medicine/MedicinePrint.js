@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from '@react-pdf/renderer';
+import React from "react";
+import { View, Text, StyleSheet, Image } from "@react-pdf/renderer";
 // import prisonLogo from '../img/prison.jpg';
 
 const styles = StyleSheet.create({
@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 10,
   },
   logo: {
@@ -20,43 +20,43 @@ const styles = StyleSheet.create({
   },
   departmentName: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#4682B4',
+    fontWeight: "bold",
+    color: "#4682B4",
   },
   address: {
     fontSize: 14,
     marginBottom: 5,
-    color: '#4682B4',
+    color: "#4682B4",
   },
   contact: {
     fontSize: 14,
     marginBottom: 5,
-    color: '#4682B4',
+    color: "#4682B4",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
-    color: '#4682B4',
+    color: "#4682B4",
   },
   tableContainer: {
     marginTop: 10,
-    border: '1px solid #000',
+    border: "1px solid #000",
   },
   tableHeader: {
-    flexDirection: 'row',
-    backgroundColor: '#FAFAFA',
-    borderBottom: '1px solid #000',
+    flexDirection: "row",
+    backgroundColor: "#FAFAFA",
+    borderBottom: "1px solid #000",
     padding: 5,
   },
   tableHeaderCell: {
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     padding: 5,
   },
   tableRow: {
-    flexDirection: 'row',
-    borderBottom: '1px solid #000',
+    flexDirection: "row",
+    borderBottom: "1px solid #000",
     padding: 5,
   },
   tableRowCell: {
@@ -64,24 +64,24 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 10,
   },
   date: {
     fontSize: 12,
     marginRight: 10,
-    color: '#4682B4',
+    color: "#4682B4",
   },
   signature: {
     fontSize: 12,
-    color: '#4682B4',
+    color: "#4682B4",
   },
 });
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US');
+  return date.toLocaleDateString("en-US");
 };
 
 const MedicinePrint = ({ filteredUsers }) => (
@@ -89,9 +89,11 @@ const MedicinePrint = ({ filteredUsers }) => (
     <View style={styles.header}>
       {/* <Image src={prisonLogo} style={styles.logo} /> */}
       <View style={styles.departmentDetails}>
-        <Text style={styles.departmentName}>Sri Lanka Prison Department</Text>
-        <Text style={styles.address}>Prison Headquarters, No.150,Baseline Road, Colombo 09.</Text>
-        <Text style={styles.contact}>+94-11-4677177 / +94-11-4677180.</Text>
+        <Text style={styles.departmentName}> Federal Prison Department</Text>
+        <Text style={styles.address}>
+          Prison Headquarters, Addis Ababa, Piassa
+        </Text>
+        <Text style={styles.contact}>+251 19345984 / +251 11467758.</Text>
       </View>
     </View>
 
@@ -122,7 +124,9 @@ const MedicinePrint = ({ filteredUsers }) => (
 
     <View style={styles.footer}>
       <Text style={styles.date}>Date: {formatDate(new Date())}</Text>
-      <Text style={styles.signature}>Authorized Signature: ___________________</Text>
+      <Text style={styles.signature}>
+        Authorized Signature: ___________________
+      </Text>
     </View>
   </View>
 );

@@ -122,7 +122,9 @@ const HealthRecordPDF = ({ record }) => (
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
           <Image source={prisonLogo} style={[styles.image, styles.logoImage]} />
-          <Text style={styles.address}>Prison Headquarters, Piassa</Text>
+          <Text style={styles.address}>
+            Prison Headquarters, Addis Ababa, Piassa
+          </Text>
           <Text style={styles.contact}>+251 19345984 / +251 11467758.</Text>
           <View style={styles.hr} />
           <Text style={styles.header}>- Health Record Report -</Text>

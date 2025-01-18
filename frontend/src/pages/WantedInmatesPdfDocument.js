@@ -151,7 +151,9 @@ const WantedInmatesPDFDocument = ({ selectedInmate }) => (
               source={prisonLogo}
               style={[styles.image, styles.logoImage]}
             />
-            <Text style={styles.address}>Prison Headquarters, Piassa.</Text>
+            <Text style={styles.address}>
+              Prison Headquarters, Addis Ababa, Piassa.
+            </Text>
             <Text style={styles.contact}>+251 19345984 / +251 11467758.</Text>
           </View>
 
