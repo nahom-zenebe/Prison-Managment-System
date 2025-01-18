@@ -154,7 +154,7 @@ function CurrentInmate() {
 
   return (
     <div className="container">
-      <SideNavbar className="sidebar" />
+      <SideNavbar />
       <Content />
       <div>
         <h1 className="currentInmates">- CURRENT INMATES -</h1>

@@ -8,7 +8,6 @@ import WantedToCurrentInmate from "./wantedToCurrentForm";
 import WantedInmatesPDFDocument from "./WantedInmatesPdfDocument";
 import "./ReleasedInmatesStyle.css";
 import "./pdfStyles.css";
-import "./wantedInmates.css";
 
 const fetchWantedInmates = async () => {
   try {
@@ -136,7 +135,7 @@ function WantedInmates() {
 
   return (
     <div className="container">
-      <SideNavbar className="sidebar" />
+      <SideNavbar />
       <Content />
       <div>
         <h1 className="releasedInmates">- WANTED INMATES -</h1>

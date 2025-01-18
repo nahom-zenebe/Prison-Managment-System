@@ -113,7 +113,7 @@ function ReleasedInmates() {
 
   return (
     <div className="container">
-      <SideNavbar className="sidebar" />
+      <SideNavbar />
       <Content />
 
       <div>
