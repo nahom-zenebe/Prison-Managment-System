@@ -1,11 +1,10 @@
-import { Routes,Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 
 import Login from "./features/auth/Login";
 
 import Staff from "./pages/Staff";
-import Welcome from './features/auth/Welcome'
-import AddJailor from "./pages/addJailor"
+import Welcome from "./features/auth/Welcome";
+import AddJailor from "./pages/addJailor";
 import JailorList from "./pages/JailorList";
 import UpdateJailor from "./components/UpdateJailor";
 
@@ -31,10 +30,10 @@ import Lethal from "./components/Add Security/Lethal";
 import Protectivetbl from "./components/Add Security/Protectivetbl";
 import Securityform from "./components/Add Security/Securityform";
 import Firearmpdate from "./components/Add Security/Firearmpdate";
-import AdminDashboard from './components/adminDashbord'
-import MedicineUpdate from "./components/Add medicine/MedicineUpdate"
+import AdminDashboard from "./components/adminDashbord";
+import MedicineUpdate from "./components/Add medicine/MedicineUpdate";
 import MedicineForm from "./components/Add medicine/MedicineForm";
-import TransportUpdate from "./components/Add Transport/TransportUpdate"
+import TransportUpdate from "./components/Add Transport/TransportUpdate";
 import TransportForm from "./components/Add Transport/TransportForm";
 
 import ProtectiveForm from "./components/Add Security/ProtectiveForm";
@@ -42,58 +41,52 @@ import LethelForm from "./components/Add Security/LethelForm";
 import LethelUpdate from "./components/Add Security/LethelUpdate";
 import ProtectiveUpdate from "./components/Add Security/ProtectiveUpdate";
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import VisitorDashboard from './visitor/VisitorDashboard';
-import AllVisitors from './visitor/AllVisitors';
-import AllVisits from './visit/AllVisits'
-import Summrychart from './visit/Summrychart';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import VisitorDashboard from "./visitor/VisitorDashboard";
+import AllVisitors from "./visitor/AllVisitors";
+import AllVisits from "./visit/AllVisits";
+import Summrychart from "./visit/Summrychart";
 
+import RehabilitationDashboard from "./Rehabilitation and Education/RehabilitationDashboard";
+import AllEducations from "./Rehabilitation and Education/education/AllEducations";
+import AllEvents from "./Rehabilitation and Education/events/AllEvents";
+import AllTrainings from "./Rehabilitation and Education/vocationalTraining/AllTrainings";
+import AllReintegrations from "./Rehabilitation and Education/Reintegration/AllReintegrations";
+import UpcommingEvents from "./Rehabilitation and Education/events/UpcommingEvents";
+import PastEvents from "./Rehabilitation and Education/events/PastEvents";
+import EducationHome from "./Rehabilitation and Education/education/EducationHome";
+import YouthEducation from "./Rehabilitation and Education/education/YouthEducation";
+import AdultEducation from "./Rehabilitation and Education/education/AdultEducation";
+import DigitalEducation from "./Rehabilitation and Education/education/DigitalEducation";
 
-import RehabilitationDashboard from './Rehabilitation and Education/RehabilitationDashboard';
-import AllEducations from './Rehabilitation and Education/education/AllEducations';
-import AllEvents from './Rehabilitation and Education/events/AllEvents';
-import AllTrainings from './Rehabilitation and Education/vocationalTraining/AllTrainings';
-import AllReintegrations from './Rehabilitation and Education/Reintegration/AllReintegrations';
-import UpcommingEvents from './Rehabilitation and Education/events/UpcommingEvents';
-import PastEvents from './Rehabilitation and Education/events/PastEvents';
-import EducationHome from './Rehabilitation and Education/education/EducationHome';
-import YouthEducation from './Rehabilitation and Education/education/YouthEducation';
-import AdultEducation from './Rehabilitation and Education/education/AdultEducation';
-import DigitalEducation from './Rehabilitation and Education/education/DigitalEducation';
-
-import SecurityDashboard from './SecurityAndIncident/SecurityDashboard';
-import AllSecurityStaff from './SecurityAndIncident/AllSecurityStaff';
-import AllIncident from './SecurityAndIncident/Incident Management/AllIncident';
+import SecurityDashboard from "./SecurityAndIncident/SecurityDashboard";
+import AllSecurityStaff from "./SecurityAndIncident/AllSecurityStaff";
+import AllIncident from "./SecurityAndIncident/Incident Management/AllIncident";
 import DoctorList from "./pages/DoctorList";
 
-
 import Home from "./components/Home/Home";
-import AddTask from './components/AddTask/AddTask'; // Correct the path
-import Tasks from './components/Tasks/Tasks'; // Correct the path
-import UpdateTask from './components/UpdateTask/UpdateTask';
-import Task from './components/Task/Task';
+import AddTask from "./components/AddTask/AddTask"; // Correct the path
+import Tasks from "./components/Tasks/Tasks"; // Correct the path
+import UpdateTask from "./components/UpdateTask/UpdateTask";
+import Task from "./components/Task/Task";
 function App() {
   return (
     <div>
-      
       <ToastContainer />
-    
-    <Routes>
-    
-      
-        <Route path="/" element={<Welcome/>}/>
-        <Route path="login" element={<Login/>}/>
-        <Route path="staff" element={<Staff/>}/>
-        <Route path="Admindashbord" element={<AdminDashboard/>}/>
-       <Route path="JailorList" element={<JailorList/>}/>
-       <Route path="DoctorList" element={<DoctorList/>}/>
-        <Route path="addjailor" element={<AddJailor/>}/>
+
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="login" element={<Login />} />
+        <Route path="staff" element={<Staff />} />
+        <Route path="Admindashbord" element={<AdminDashboard />} />
+        <Route path="JailorList" element={<JailorList />} />
+        <Route path="DoctorList" element={<DoctorList />} />
+        <Route path="addjailor" element={<AddJailor />} />
         <Route path="/JailorList/:id" element={<UpdateJailor />} />
 
-        
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="current" element={<CurrentInmates/>} />
+        <Route path="current" element={<CurrentInmates />} />
         <Route path="/released" element={<ReleasedInmates />} />
         <Route path="/wanted" element={<WantedInmates />} />
         <Route path="/appointments" element={<HealthcareAppointments />} />
@@ -103,67 +96,70 @@ function App() {
 
         <Route path="/healthcareDashboard" element={<HealthcareDashboard />} />
         <Route path="/currentAppointments" element={<CurrentAppointments />} />
-        <Route path="/approvedAppointments" element={<ApprovedAppointments />} />
+        <Route
+          path="/approvedAppointments"
+          element={<ApprovedAppointments />}
+        />
         <Route path="/healthRecords" element={<AllHealthRecords />} />
-        
-        <Route path="/Security" element={<Security/>}/>
-          <Route path="/mainsecurity" element={<Security/>}/>
-          <Route path="/maintransport" element={<Transport/>}/>
-          <Route path="/mainmedical" element={<Medicine/>}/>
 
-          <Route path="/firearmpage" element={<Firearmtbl/>}/>
-          <Route path="/lethalpage" element={<Lethal/>}/>
-          <Route path="/protectivepage" element={<Protectivetbl/>}/>
+        <Route path="/Security" element={<Security />} />
+        <Route path="/mainsecurity" element={<Security />} />
+        <Route path="/maintransport" element={<Transport />} />
+        <Route path="/mainmedical" element={<Medicine />} />
 
-          <Route path="/securityform" element={<Securityform/>}/>
-          
-          {/* update part for firearm*/}
+        <Route path="/firearmpage" element={<Firearmtbl />} />
+        <Route path="/lethalpage" element={<Lethal />} />
+        <Route path="/protectivepage" element={<Protectivetbl />} />
 
-          <Route path="/firearmpage/:id" element={<Firearmpdate/>}/>
-          <Route path="/medicinepage/:id" element={<MedicineUpdate/>}/>
-          <Route path="/medicineform" element={<MedicineForm/>}/>
-          <Route path="/transportpage/:id" element={<TransportUpdate/>}/>
-          <Route path="/transportform" element={<TransportForm/>}/>
-          <Route path="/protectiveform" element={<ProtectiveForm/>}/>
-          <Route path="/lethelform" element={<LethelForm/>}/>
-          <Route path="/lethalpage/:id" element={<LethelUpdate/>}/>
-          <Route path="/protectivepage/:id" element={<ProtectiveUpdate/>}/>
+        <Route path="/securityform" element={<Securityform />} />
 
-          {/* visitor management */}
-          <Route path="/visitorDashboard" element={<VisitorDashboard />} />
-          <Route path="/allVisitors" element={<AllVisitors />} />
-          <Route path="/allVisits" element={<AllVisits />} />
-          <Route path="/summaryChart" element={<Summrychart />} />
+        {/* update part for firearm*/}
 
+        <Route path="/firearmpage/:id" element={<Firearmpdate />} />
+        <Route path="/medicinepage/:id" element={<MedicineUpdate />} />
+        <Route path="/medicineform" element={<MedicineForm />} />
+        <Route path="/transportpage/:id" element={<TransportUpdate />} />
+        <Route path="/transportform" element={<TransportForm />} />
+        <Route path="/protectiveform" element={<ProtectiveForm />} />
+        <Route path="/lethelform" element={<LethelForm />} />
+        <Route path="/lethalpage/:id" element={<LethelUpdate />} />
+        <Route path="/protectivepage/:id" element={<ProtectiveUpdate />} />
 
-          {/* Rehabilitation and Education Management */}
-          <Route path="/rehabilitationDashboard" element={<RehabilitationDashboard />} />
-          <Route path="/allEducation" element={<AllEducations />} />
-          <Route path="/educationHome" element={<EducationHome />} />
-          <Route path="/allEvents" element={<AllEvents />} />
-          <Route path="/allTrainings" element={<AllTrainings />} />
-          <Route path="/allReintegrations" element={<AllReintegrations />} />
-          <Route path="/upcommongEvents" element={<UpcommingEvents />} />
-          <Route path="/pastEvents" element={<PastEvents />} />
-          <Route path="/youthEducation" element={<YouthEducation />} />
-          <Route path="/adultEducation" element={<AdultEducation />} />
-          <Route path="/digitalEducation" element={<DigitalEducation />} />
+        {/* visitor management */}
+        <Route path="/visitorDashboard" element={<VisitorDashboard />} />
+        <Route path="/allVisitors" element={<AllVisitors />} />
+        <Route path="/allVisits" element={<AllVisits />} />
+        <Route path="/summaryChart" element={<Summrychart />} />
 
-          {/* security staff management */}
-          <Route path="/securityStaffDashboard" element={<SecurityDashboard />} />
-          <Route path="/allSecurityStaff" element={<AllSecurityStaff />} />
-          <Route path="/allIncidents" element={<AllIncident />} />
+        {/* Rehabilitation and Education Management */}
+        <Route
+          path="/rehabilitationDashboard"
+          element={<RehabilitationDashboard />}
+        />
+        <Route path="/allEducation" element={<AllEducations />} />
+        <Route path="/educationHome" element={<EducationHome />} />
+        <Route path="/allEvents" element={<AllEvents />} />
+        <Route path="/allTrainings" element={<AllTrainings />} />
+        <Route path="/allReintegrations" element={<AllReintegrations />} />
+        <Route path="/upcommongEvents" element={<UpcommingEvents />} />
+        <Route path="/pastEvents" element={<PastEvents />} />
+        <Route path="/youthEducation" element={<YouthEducation />} />
+        <Route path="/adultEducation" element={<AdultEducation />} />
+        <Route path="/digitalEducation" element={<DigitalEducation />} />
 
-          {/*maintenance */}
+        {/* security staff management */}
+        <Route path="/securityStaffDashboard" element={<SecurityDashboard />} />
+        <Route path="/allSecurityStaff" element={<AllSecurityStaff />} />
+        <Route path="/allIncidents" element={<AllIncident />} />
 
-          
-          <Route path="/mainhome" element={<Home />} />
-          <Route path="addTask" element={<AddTask/>} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/tasks/:id" element={<UpdateTask />} />
-          <Route path="/task" element={<Task/>} />
+        {/*maintenance */}
 
-    </Routes>
+        <Route path="/mainhome" element={<Home />} />
+        <Route path="addTask" element={<AddTask />} />
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/tasks/:id" element={<UpdateTask />} />
+        <Route path="/task" element={<Task />} />
+      </Routes>
     </div>
   );
 }

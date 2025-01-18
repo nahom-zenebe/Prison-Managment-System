@@ -40,3 +40,6 @@ Content-Type: application/json
   "foundDate": null
 
 }
+
+###
+POST http://localhost:3500/

@@ -21,8 +21,12 @@
   left: 0;
   width: 100%;
   height: 750px;
-  
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.9)
+  );
 }
 
 .image-container img {
@@ -37,19 +41,18 @@
   left: 50px; /* Adjust this value to move the text horizontally */
   transform: translateY(-50%);
   color: white;
-  
 }
-.welcome-text .welcome-img{
+.welcome-text .welcome-img {
   width: 600px;
   height: 200px;
   margin-left: 50px;
 }
-.Login-form-container2{
+.Login-form-container2 {
   margin: 150px;
   margin-top: 200px;
 }
 
-.login-inputs{
+.login-inputs {
   width: 350px;
   padding: 10px;
   margin-bottom: 20px;
@@ -70,6 +73,6 @@
 .logbtn:hover {
   background-color: #0056b3;
 }
-.copyright{
+.copyright {
   margin-top: 200px;
 }

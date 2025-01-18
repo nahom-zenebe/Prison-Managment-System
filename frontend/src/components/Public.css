@@ -1,10 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .logo-section {
-  background-color: #1d405c;
+  background-color: #212459;
   height: 200px;
   width: 100%;
   display: flex;
@@ -42,7 +42,7 @@
 .navbar ul li a:hover {
   color: #1d405c;
 }
-.slider-img{
+.slider-img {
   width: 100%;
   height: 500px;
 }
@@ -54,17 +54,17 @@
 
 /* Optional: Change the active dot color */
 .slick-dots li.slick-active button:before {
-  color: #4682B4; /* Change the color of the active dot */
+  color: #4682b4; /* Change the color of the active dot */
 }
 
-.history{
+.history {
   margin-top: 50px;
   display: flex;
 }
-.history-img{
+.history-img {
   margin: 20px;
 }
-.history-p{
+.history-p {
   font-family: sans-serif;
 }
 
@@ -85,8 +85,8 @@
   text-align: center; /* Center align text */
 }
 
-.footer-left ul li a{
-  color:#fff;
+.footer-left ul li a {
+  color: #fff;
 }
 .footer-right a {
   color: #fff;
