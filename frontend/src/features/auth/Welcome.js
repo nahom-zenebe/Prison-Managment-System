@@ -24,7 +24,7 @@ const Welcome = () => {
                         Manage inmate records, staff schedules, and visitor logs efficiently with our secure system.
                     </p>
                     <div className='button-container'>
-                        <button className='btn-learn-more'>Learn more</button>
+                        <Link to="/LearnMore" className='btn-learn-more'>Learn more</Link>
                         <button className='btn-get-manual'>Get the manual</button>
                     </div>
                 </div>

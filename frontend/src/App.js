@@ -6,7 +6,7 @@ import Signup from "./features/auth/signup";
 import PagenoutFound from './pages/PagenoutFound'
 import { useAuth } from "./hooks/customhook";
 import ProtectedRoute from './components/ProtectedRoute'
-
+import LearnMore from './pages/LearnMore'
 import Staff from "./pages/Staff";
 import Welcome from "./features/auth/Welcome";
 import AddJailor from "./pages/addJailor";
@@ -74,6 +74,8 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="login" element={<Login />} />
         <Route path="Signup" element={<Signup />} />
+        <Route path="LearnMore" element={<LearnMore />} />
+ 
         <Route path="staff" element={<ProtectedRoute><Staff /></ProtectedRoute>} />
         <Route path="admindashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
         <Route path="JailorList" element={<ProtectedRoute><JailorList /></ProtectedRoute>} />
