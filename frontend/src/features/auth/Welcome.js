@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Welcomepage.css';
-
+import prison_logo from '../../img/prison_logo6.png'
 const Welcome = () => {
     return (
         <div className="main-container">
@@ -14,7 +14,9 @@ const Welcome = () => {
                     </nav>
                 </div>
             </header>
+  
             <section className='main-content'>
+            <img src={prison_logo} alt="side image" />
                 <div className='content-container'>
                     <h1 className='title-header'>Welcome to our <br></br>Advanced Prison Management System</h1>
                     <p className="hero-description">

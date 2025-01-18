@@ -1,37 +1,40 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import "./Login.css";
-import loginpage from '../../img/First.jpeg';
-import welcome from '../../img/web-logo.png';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
+import prison_logo from '../../img/prison_logo6.png';
 
 const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Add your authentication logic here if needed
-    navigate('/admindashbord');
+    navigate('/admindashboard');
   };
 
   return (
-    <div className="Login-form-container">
-      <div className="image-container">
-        {/* Side image */}
-        <img src={loginpage} alt="side image" />
+    <div className="login-container">
+      
+      <div className="image-text-container">
+        <img src={prison_logo} alt="Prison Logo" className="prison-logo" />
         <div className="welcome-text">
-          <img src={welcome} alt="side image" className='welcome-img'/>
+          <h1>Welcome to the Prison Management System</h1>
+          <p>Efficiently manage inmate records, staff schedules, and more.</p>
         </div>
       </div>
-      <div className="Login-form-container2">
+
+
+      <div className="login-form-container">
         <h2>Staff Login</h2>
         <input
           type="text"
-          placeholder="Username" className='login-inputs'
-        /><br/>
+          placeholder="Username"
+          className="login-inputs"
+        /><br />
         <input
           type="password"
-          placeholder="Password" className='login-inputs'
-        /><br/>
-        <button className='logbtn' onClick={handleLogin}>Login</button>
+          placeholder="Password"
+          className="login-inputs"
+        /><br />
+        <button className="logbtn" onClick={handleLogin}>Login</button>
       </div>
     </div>
   );
