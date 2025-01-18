@@ -1,6 +1,9 @@
-
 .inmatesTable {
   margin-left: 320px;
+}
+
+.sidebar {
+  margin-top: 170px;
 }
 
 .closeIcon {
@@ -12,8 +15,6 @@
   margin-left: 200px;
   margin-top: -28px;
 }
-
-
 
 /* Table styles */
 .inmatesTable {
@@ -50,16 +51,16 @@
   font-family: sans-serif;
   font-weight: bold;
   font-size: 16px;
-  background-color: #86B6F6;
+  background-color: #86b6f6;
 }
 
 .addButton:hover {
-  background-color: #176B87;
+  background-color: #176b87;
 }
 
 .update {
   width: 70px;
-  background-color: #176B87;
+  background-color: #176b87;
   color: #ffffff;
   font-size: 15px;
   font-weight: bold;
@@ -99,7 +100,7 @@
   margin-bottom: 25px;
   font-family: sans-serif;
   font-weight: bolder;
-  border: 4px solid #89CFF0;
+  border: 4px solid #89cff0;
   border-radius: 5px;
   padding: 10px;
 }
@@ -111,13 +112,13 @@
   margin-left: 300px;
   font-family: sans-serif;
   font-size: 25px;
-  color: #89CFF0;
+  color: #89cff0;
 }
 
 .wantedprofileTitle {
   margin-top: 5px;
   margin-bottom: 2px;
-  color: #89CFF0;
+  color: #89cff0;
   margin-right: 85px;
   font-size: 25px;
   font-family: sans-serif;
@@ -128,7 +129,7 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid #89CFF0;
+  border: 2px solid #89cff0;
   border-radius: 5px;
   font-size: 16px;
   margin-top: 40px;
@@ -139,16 +140,16 @@
 
 .releasedsearchContainer {
   position: relative;
-  }
+}
 
-  .searchIcon {
-      position: absolute;
-      margin-top: 16px;
-      margin-left: 900px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #ccc; 
-  }
+.searchIcon {
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 900px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+}
 
 .flexContent {
   display: flex;
@@ -182,7 +183,7 @@
 
 .updateProfile {
   width: 100px;
-  background-color: #176B87;
+  background-color: #176b87;
   color: #ffffff;
   font-size: 15px;
   font-weight: bold;
@@ -217,7 +218,7 @@
 .printProfile {
   margin-left: 150px;
   width: 150px;
-  background-color: #86B6F6;
+  background-color: #86b6f6;
   color: #000;
   font-size: 15px;
   font-weight: bolder;
@@ -230,7 +231,7 @@
   font-size: 17px;
 }
 
-.sentence{
+.sentence {
   margin-left: 340px;
   font-family: sans-serif;
   font-weight: 500;
@@ -239,7 +240,7 @@
 .releasedprofileTitle {
   margin-top: 5px;
   margin-bottom: 2px;
-  color: #89CFF0;
+  color: #89cff0;
   margin-right: 90px;
   font-size: 25px;
   font-family: sans-serif;
@@ -248,7 +249,7 @@
 
 .downloadReleasedProfile {
   margin-left: 150px;
-  background-color: #86B6F6;
+  background-color: #86b6f6;
   color: #000000;
   font-size: 15px;
   font-weight: bolder;
