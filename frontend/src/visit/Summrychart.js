@@ -1,18 +1,18 @@
-import React from 'react'
-import Sidebar from '../visitor/Sidebar'
-import Summary from './Summary'
+import React from "react";
+import Sidebar from "../visitor/Sidebar";
+import Summary from "./Summary";
 
 const Summrychart = () => {
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{ display: "flex" }}>
       <div>
-        <Sidebar/>
+        <Sidebar />
       </div>
       <div>
-        <Summary/>
+        <Summary />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Summrychart
+export default Summrychart;
