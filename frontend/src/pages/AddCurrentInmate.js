@@ -95,9 +95,9 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
     
 
     const validateNIC = (_, value) => {
-        const nicRegex = /^[0-9]{9}[vVxX]$|^[0-9]{12}$/;
+        const nicRegex = /^[0-9]{16}$/; 
         if (!nicRegex.test(value)) {
-            return Promise.reject('Invalid contact number format. Please enter a valid NIC with 12 numbers or 9 numbers with V or v.');
+            return Promise.reject('Invalid NIC format. Please enter a valid NIC with exactly 16 digits.');
         }
         return Promise.resolve();
     };
