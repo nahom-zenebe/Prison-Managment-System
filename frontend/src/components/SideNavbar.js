@@ -37,7 +37,7 @@ function SideNavbar({ userName, profilePicture }) {
         mode="vertical"
         onClick={({ key }) => handleMenuClick(key)}
         selectedKeys={[location.pathname]}
-        style={{ backgroundColor: "#000" }}
+        style={{ backgroundColor: "#212459" }}
       >
         <Menu.Item className="mainMenu" key="/dashboard">
           Inmate Dashboard
