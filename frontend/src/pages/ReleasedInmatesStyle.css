@@ -143,6 +143,7 @@
   margin-top: 16px;
   margin-left: 900px;
   top: 50%;
+  margin-right: 20px;
   transform: translateY(-50%);
   color: #ccc;
 }
