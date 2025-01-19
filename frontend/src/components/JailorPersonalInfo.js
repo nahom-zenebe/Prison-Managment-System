@@ -45,21 +45,31 @@ function JailorPersonalInfo({ formData, setFormData }) {
         break;
 
         break;
-      case "ContactNumber":
-        if (!contactNumberRegex.test(value)) {
-          setFormData((prevData) => ({
-            ...prevData,
-            ContactNumber: value.replace(/[^\d+\s]/g, ""),
-          }));
-        }
-        break;
-      case "EmergencyContactNumber":
-        if (!EmergencyContactNumberRegex.test(value)) {
-          setFormData((prevData) => ({
-            ...prevData,
-            EmergencyContactNumber: value.replace(/[^\d+\s]/g, ""),
-          }));
-        }
+        case "ContactNumber":
+          if (!contactNumberRegex.test(value)) {
+            let strippedValue = value.replace(/[^\d+]/g, ""); // Remove non-digit characters except "+"
+            if (!strippedValue.startsWith("+2519")) {
+              strippedValue = `+2519`; 
+            }
+            strippedValue = strippedValue.slice(0, 12); 
+            setFormData((prevData) => ({...prevData,
+              ContactNumber: strippedValue,
+            }));
+          }
+          break;
+        
+        case "EmergencyContactNumber":
+          if (!EmergencyContactNumberRegex.test(value)) {
+            let strippedValue = value.replace(/[^\d+]/g, ""); 
+            if (!strippedValue.startsWith("+2519")) {
+              strippedValue = `+2519`; 
+            }
+            strippedValue = strippedValue.slice(0, 12); 
+            setFormData((prevData) => ({
+              ...prevData,
+              EmergencyContactNumber: strippedValue,
+            }));
+          }
         break;
       case "DateofBirth":
         const dateOfBirth = new Date(value); // Convert input value to a Date object
@@ -172,6 +182,7 @@ function JailorPersonalInfo({ formData, setFormData }) {
       <label className="Addjailor-lable">Emergency Contact Number: </label>
       <input
         type="text"
+        placeholder="+2519xxxxxxxx"
         className="addjailorinputs"
         name="EmergencyContactNumber"
         value={formData.EmergencyContactNumber}
@@ -186,6 +197,7 @@ function JailorPersonalInfo({ formData, setFormData }) {
       <label className="Addjailor-lable">Marital Status:</label>
       <select
         name="MaritalStatus"
+        placeholder="+2519xxxxxxxx"
         className="addjailorinputs"
         value={formData.MaritalStatus}
         onChange={handleChange}

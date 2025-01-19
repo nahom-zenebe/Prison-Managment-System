@@ -94,10 +94,10 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
   };
 
   const validateContactNumber = (_, value) => {
-    const regex = /^\+94\d{9}$/;
+    const regex = /^\+2519\d{8}$/;
     if (!regex.test(value)) {
       return Promise.reject(
-        "Invalid NIC format. Please enter a valid contact number starting with +94."
+        "Invalid contact number format. Please enter a valid contact number starting with +2519 and containing exactly 8 digits."
       );
     }
     return Promise.resolve();
@@ -330,7 +330,7 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
           <div className="InputName">
             <Input
               className="InputField"
-              placeholder="+94XXXXXXXXX"
+              placeholder="+2519xxxxxxxx"
               value={formData.contactnumber}
               onChange={(e) => {
                 setFormData({ ...formData, contactnumber: e.target.value });
@@ -373,7 +373,7 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
           <div className="InputName">
             <Input
               className="InputField"
-              placeholder="+94XXXXXXXXX"
+              placeholder="+2519XXXXXXXXX"
               value={formData.emergencycontactnumber}
               onChange={(e) => {
                 setFormData({
@@ -435,10 +435,10 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
             >
               <Option value="No Schooling">No Schooling</Option>
               <Option value="Grade 1-5">Grade 1-5</Option>
-              <Option value="Passed Grade 5">Passed Grade 5</Option>
-              <Option value="Passed Grade 8">Passed Grade 8</Option>
-              <Option value="Passed O/Level">Passed G.C.E (O/L)</Option>
-              <Option value="Passed A/Level">Passed G.C.E (A/L)</Option>
+              <Option value="Primary School">Primary School</Option>
+              <Option value="Secondary school">Secondary school</Option>
+              <Option value="Passed Ministry">Passed Ministry</Option>
+              <Option value="Passed Matric">Passed Matric</Option>
               <Option value="Graduate">Graduate</Option>
               <Option value="Others">Others</Option>
             </Select>

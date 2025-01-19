@@ -99,6 +99,7 @@ function DoctorForm() {
       </label>
       <input
         type="tel"
+        placeholder="+2519xxxxxxxx"
         id="contactNumber"
         name="ContactNumber"
         value={formData.ContactNumber}

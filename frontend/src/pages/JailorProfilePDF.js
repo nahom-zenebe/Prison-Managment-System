@@ -87,7 +87,7 @@ const JailorProfilePDF = ({ jailor }) => (
           <View style={styles.contactussection}>
             <Text style={styles.content}>
               Contact Numbers: (+2519)345984 / (+2519)11467718 | Address:
-              Addisababa,Paiasa
+              Addisababa,Piasa
             </Text>
           </View>
           <View style={styles.hr} />
