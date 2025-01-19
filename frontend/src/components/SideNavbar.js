@@ -17,7 +17,7 @@ function SideNavbar({ userName, profilePicture }) {
   return (
     <div className="sidebar">
       <div className="dashboard-header">
-        <img
+        <img 
           className="prison-logo"
           src={prisonDepartmentLogo}
           alt="Prison Department Logo"
