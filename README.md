@@ -41,6 +41,11 @@ A comprehensive Prison Management System designed for the Federal Police. The sy
 - **Authentication**: JWT (JSON Web Tokens)
 - **State Management**: Redux (Optional for managing app-wide state)
 
+here is live demo: 
+
+```https://prison-managment-system.vercel.app```
+
+
 ## Installation
 
 ### Backend Setup
