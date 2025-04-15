@@ -1,0 +1,76 @@
+/* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%; /* Full height cascade */
+}
+
+.app {
+  display: flex;
+  height: 100%; /* Ensures layout spans full height */
+}
+
+/* Sidebar styles */
+.sidebar {
+  height: 100%; /* Full height of the viewport */
+  position: fixed; /* Keeps sidebar in place */
+  width: 300px;
+  background-color: #212459;
+  padding: 20px;
+  overflow-y: auto; /* Scrollable if content overflows */
+  top: 0;
+  left: 0;
+}
+
+/* Main content styles */
+.content {
+  margin-left: 300px; /* Matches sidebar width */
+  padding: 20px;
+  background-color: #ffffff;
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Aligns content vertically */
+  height: 100%; /* Fills remaining space */
+  overflow-y: auto; /* Scrollable if content overflows */
+}
+
+/* Header styles */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.prison-logo {
+  width: 60px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.topic {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Divider and menu styles */
+.divider {
+  border-top: 2px solid #ffffff;
+  margin: 20px 0;
+}
+
+.mainMenu {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.subMenu {
+  font-family: sans-serif;
+  font-size: 16px;
+}

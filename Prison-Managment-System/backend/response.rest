@@ -1,0 +1,61 @@
+POST http://localhost:3500/inmate/addinmates
+Content-Type: application/json
+
+{
+  "image": "https://example.com/images/inmate1.jpg",
+  "fullname": "John Doe",
+  "initialname": "J.D.",
+  "birthday": "1985-05-15",
+  "gender": "Male",
+  "nic": "123456789V",
+  "address": "123 Elm Street, Springfield, USA",
+  "contactnumber": "+1234567890",
+  "emergencycontactname": "Jane Doe",
+  "emergencycontactnumber": "+0987654321",
+  "marital": "Married",
+  "occupation": "Carpenter",
+  "education": "High School Diploma",
+  "religion": "Christian",
+  "inmatenumber": 1001,
+  "offense": "Burglary",
+  "sentence": "5 years",
+  "admissionDate": "2020-01-15",
+  "releaseDate": "2025-01-14",
+  "years": 5,
+  "months": 0,
+  "days": 0,
+  "cellNumber": "A-101",
+  "medicalConditions": "Diabetes",
+  "additionalNotes": "Requires regular insulin shots.",
+  "realReleaseDate": null,
+  "releaseReason": null,
+  "releaseBy": null,
+  "confirmReleased": "No",
+  "status": "Incarcerated",
+  "escapedDate": null,
+  "escapedTime": null,
+  "escapedLocation": null,
+  "physicalDescription": "5'10\", medium build, brown hair, green eyes",
+  "clothingDescription": "Orange jumpsuit with ID tag 1001",
+  "foundDate": null
+
+}
+
+###
+POST http://localhost:3500/auth/signup
+Content-Type: application/json
+
+{
+  "username": "abe",
+  "password": "something",
+  "role": "adimin"
+}
+
+###
+POST http://localhost:3500/auth/login
+Content-Type: application/json
+
+{
+   "username": "abela",
+    "password": "something"  
+}

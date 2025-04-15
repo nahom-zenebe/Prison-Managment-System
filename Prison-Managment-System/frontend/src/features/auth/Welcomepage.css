@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    width: 100%;
+}
+
+.main-container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.site-header {
+    background-color: #212459;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.brand-logo:hover {
+    color: #9fbee9;
+}
+
+.navigation {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #525eba;
+    color: #ffffff;
+}
+
+.main-content {
+    background-color: #c7c9dc;
+
+    width: 100%;
+    height: 900px;
+    text-align: center;
+   padding-top: 350px;
+   padding-bottom: 200px;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-top: 60px;
+    width: 100%;
+}
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    padding-top:40px;
+}
+.title-header {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #212459;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+
+
+.btn-get-manual {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #40479c;
+    transition: 0.6s ease ;
+    border-radius: 10px;
+    color: #fff;
+    border-style: none;
+    font-size: 1rem;
+    margin-left: 20px;
+    margin-top: 20px;
+    
+ 
+}
+.btn-learn-more{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #40479c;
+    transition: 0.6s ease ;
+    border-radius: 10px;
+    color: #fff;
+    border-style: none;
+    font-size: 1rem;
+    margin-left: 300px;
+    margin-top: 20px;
+    padding-top: 12px;
+}
+
+.btn-learn-more:hover,
+.btn-get-manual:hover {
+    background-color: #40479c;
+
+}
+
+.site-footer {
+    background-color: #212459;
+    text-align: center;
+    padding: 1.5rem;
+    color: white;
+    font-size: 0.875rem;
+    
+
+    text-align: center;
+}
+
+.site-footer > .container {
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 500px;
+
+}
+

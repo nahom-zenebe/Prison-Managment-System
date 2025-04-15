@@ -1,0 +1,207 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.sidebar {
+  margin: 100px;
+}
+
+.sideNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  padding-top: 20px;
+  z-index: 100;
+}
+
+.sideNavbar a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.sideNavbar a:hover {
+  background-color: #575757;
+}
+
+.releasedsearchBar {
+  margin-right: 10%;
+}
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+/* Title */
+.releasedInmates {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Flex container for counts and search */
+.flexContent {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Counts Container */
+.releasedcountContainer {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.releasedcountContainer p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Search Bar */
+.releasedsearchContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.releasedsearchBar {
+  width: 200px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+}
+
+/* Table Styling */
+.inmatesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inmatesTable th,
+.inmatesTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.inmatesTable th {
+  background-color: #f1f1f1;
+}
+
+.inmatesTable td img {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Modal Styles */
+.ant-modal {
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.ant-modal-header {
+  background-color: #111;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.ant-modal-title {
+  font-weight: bold;
+}
+
+.ant-modal-footer {
+  background-color: #f1f1f1;
+  border-radius: 0 0 10px 10px;
+}
+
+.closeIcon {
+  font-size: 20px;
+}
+
+/* Profile Modal Content */
+.profileContainer {
+  text-align: center;
+}
+
+.profile-container {
+  margin-top: 20px;
+}
+
+.profile-item {
+  margin: 10px 0;
+}
+
+.profile-label {
+  font-weight: bold;
+}
+
+.profile-value {
+  margin-left: 10px;
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.wantedProfile,
+.downloadProfile {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.wantedProfile:hover,
+.downloadProfile:hover {
+  background-color: #45a049;
+}
+
+/* Buttons in Table */
+.delete,
+.update {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.delete:hover,
+.update:hover {
+  background-color: #d32f2f;
+}
+
+/* Update Button */
+.update {
+  background-color: #4caf50;
+}
+
+.update:hover {
+  background-color: #45a049;
+}

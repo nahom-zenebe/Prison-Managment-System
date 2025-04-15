@@ -1,0 +1,62 @@
+/* AdminDashboard.css */
+
+.charts h2 {
+  color: #212459;
+}
+
+.admindashboard-chart-card-status h2 {
+  color: #212459;
+}
+.admin-main {
+  margin: 20px;
+  margin-left: 300px;
+}
+
+.admin-function-set {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.admin-main-function {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  margin-left: 50px;
+  background-color: #363a87;
+  border-radius: 10px;
+  padding: 15px 0px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: rgb(183, 187, 251);
+}
+.activity-log-section {
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.activity-log-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.activity-log-item {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.activity-log-item div {
+  margin: 5px 0;
+}
+
