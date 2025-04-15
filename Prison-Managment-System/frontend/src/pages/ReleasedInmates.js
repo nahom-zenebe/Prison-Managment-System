@@ -11,7 +11,7 @@ import "./pdfStyles.css";
 const fetchReleasedInmates = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:3500/inmate/getreleasedinmates"
+      "https://prison-managment-system-backend.onrender.com/inmate/getreleasedinmates"
     );
     return response.data;
   } catch (error) {
@@ -82,7 +82,10 @@ function ReleasedInmates() {
 
   const handleUpdate = async (id, updatedData) => {
     try {
-      await axios.put(`http://localhost:3500/inmate/${id}`, updatedData);
+      await axios.put(
+        `https://prison-managment-system-backend.onrender.com/inmate/${id}`,
+        updatedData
+      );
       message.success("Inmate is added to released list successfully.");
       fetchReleasedInmates().then((data) => setCurrentInmates(data));
       setIsVisibleUpdateModal(false);
@@ -98,7 +101,9 @@ function ReleasedInmates() {
     );
     if (confirmed) {
       try {
-        await axios.delete(`http://localhost:3500/inmate/${id}`);
+        await axios.delete(
+          `https://prison-managment-system-backend.onrender.com/inmate/${id}`
+        );
         const updatedReleasedInmates = releasedInmates.filter(
           (inmate) => inmate._id !== id
         );
@@ -157,7 +162,7 @@ function ReleasedInmates() {
               {selectedInmate.image ? (
                 <img
                   className="image"
-                  src={`http://localhost:3500/uploads/${selectedInmate.image}`}
+                  src={`https://prison-managment-system-backend.onrender.com/uploads/${selectedInmate.image}`}
                   alt="Inmate Photo"
                   style={{
                     marginLeft: "230px",
@@ -441,7 +446,7 @@ function ReleasedInmates() {
                 <td onClick={() => showProfileModal(inmate)}>
                   {inmate.image ? (
                     <img
-                      src={`http://localhost:3500/uploads/${inmate.image}`}
+                      src={`https://prison-managment-system-backend.onrender.com/uploads/${inmate.image}`}
                       alt="Inmate Photo"
                       style={{ width: "100px", height: "120px" }}
                     />

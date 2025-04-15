@@ -7,7 +7,13 @@ import { Chart as ChartJS } from "chart.js/auto";
 import moment from "moment";
 import axios from "axios";
 import "../pages/Dashboard.css";
-import { FaUsers, FaHome, FaHospitalAlt, FaShieldAlt, FaUserFriends } from 'react-icons/fa'; // Importing icons
+import {
+  FaUsers,
+  FaHome,
+  FaHospitalAlt,
+  FaShieldAlt,
+  FaUserFriends,
+} from "react-icons/fa"; // Importing icons
 
 function AdminDashboard() {
   const [currentInmates, setCurrentInmates] = useState([]);
@@ -16,44 +22,43 @@ function AdminDashboard() {
   const [jailors, setJailors] = useState([]);
   const [recentLogs, setRecentLogs] = useState([]);
 
-
   useEffect(() => {
     fetchData();
   }, []);
 
-
   useEffect(() => {
     const fetchRecentLogs = async () => {
       try {
-        const logsResponse = await axios.get("http://localhost:3500/Activitylogs/logs");
-        setRecentLogs(logsResponse.data); 
+        const logsResponse = await axios.get(
+          "https://prison-managment-system-backend.onrender.com/Activitylogs/logs"
+        );
+        setRecentLogs(logsResponse.data);
       } catch (error) {
         console.error("Error fetching activity logs:", error.message);
       }
     };
-  
+
     fetchRecentLogs();
   }, []);
-  
 
   const fetchData = async () => {
     try {
       const currentResponse = await axios.get(
-        "http://localhost:3500/inmate/getcurrentinmates"
+        "https://prison-managment-system-backend.onrender.com/inmate/getcurrentinmates"
       );
       setCurrentInmates(
         currentResponse.data.filter((inmate) => inmate.status === "Current")
       );
 
       const releasedResponse = await axios.get(
-        "http://localhost:3500/inmate/getreleasedinmates"
+        "https://prison-managment-system-backend.onrender.com/inmate/getreleasedinmates"
       );
       setReleasedInmates(
         releasedResponse.data.filter((inmate) => inmate.status === "Released")
       );
 
       const wantedResponse = await axios.get(
-        "http://localhost:3500/inmate/getwantedinmates"
+        "https://prison-managment-system-backend.onrender.com/inmate/getwantedinmates"
       );
       setWantedInmates(
         wantedResponse.data.filter((inmate) => inmate.status === "Wanted")
@@ -63,7 +68,9 @@ function AdminDashboard() {
     }
 
     try {
-      const jailorResponse = await axios.get("http://localhost:3500/Jailors");
+      const jailorResponse = await axios.get(
+        "https://prison-managment-system-backend.onrender.com/Jailors"
+      );
       setJailors(jailorResponse.data);
     } catch (err) {
       console.error("Error Fetching Jailors:", err.message);
@@ -181,33 +188,31 @@ function AdminDashboard() {
         <div className="admin-function-set">
           <div className="admin-main-function">
             <Link to="/staff" className="nav-link">
-            <FaUsers />  Staff Management
+              <FaUsers /> Staff Management
             </Link>
           </div>
           <div className="admin-main-function">
             <Link to="/dashboard" className="nav-link">
-            <FaHome />   Inmate Management
+              <FaHome /> Inmate Management
             </Link>
           </div>
         </div>
         <div className="admin-function-set">
           <div className="admin-main-function">
             <Link to="/visitorDashboard" className="nav-link">
-            <FaHome />     Visitor Management
+              <FaHome /> Visitor Management
             </Link>
           </div>
           <div className="admin-main-function">
             <Link to="/healthcareDashboard" className="nav-link">
-            <FaHospitalAlt />      Healthcare Management
+              <FaHospitalAlt /> Healthcare Management
             </Link>
           </div>
           <div className="admin-main-function">
             <Link to="/securityStaffDashboard" className="nav-link">
-            <FaHospitalAlt />    Security Management
+              <FaHospitalAlt /> Security Management
             </Link>
           </div>
-
-          
         </div>
 
         <div className="charts">
@@ -232,28 +237,34 @@ function AdminDashboard() {
             <Bar data={inmatesStatusData} />
           </div>
         </div>
-       
       </div>
- 
-<div className="activity-log-section">
-  <h3>Recent Activity Logs</h3>
-  {recentLogs.length > 0 ? (
-    <ul className="activity-log-list">
-      {recentLogs.map((log, index) => (
-        <li key={index} className="activity-log-item">
-          <div><strong>User:</strong> {log.userId}</div>
-          <div><strong>Action:</strong> {log.action}</div>
-          <div><strong>Target:</strong> {log.target}</div>
-          <div><strong>Date:</strong> {moment(log.createdAt).format('MMM D, YYYY h:mm A')}</div>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No recent activity logs available.</p> 
-  )}
-</div>
 
-     
+      <div className="activity-log-section">
+        <h3>Recent Activity Logs</h3>
+        {recentLogs.length > 0 ? (
+          <ul className="activity-log-list">
+            {recentLogs.map((log, index) => (
+              <li key={index} className="activity-log-item">
+                <div>
+                  <strong>User:</strong> {log.userId}
+                </div>
+                <div>
+                  <strong>Action:</strong> {log.action}
+                </div>
+                <div>
+                  <strong>Target:</strong> {log.target}
+                </div>
+                <div>
+                  <strong>Date:</strong>{" "}
+                  {moment(log.createdAt).format("MMM D, YYYY h:mm A")}
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No recent activity logs available.</p>
+        )}
+      </div>
     </div>
   );
 }

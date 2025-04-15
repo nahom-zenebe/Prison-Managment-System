@@ -20,7 +20,7 @@ const VisitorDetails = ({ isOpen, onClose, refreshList, visitorId }) => {
   const getVisitorDetails = async (visitorId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3500/api/visitor/${visitorId}`
+        `https://prison-managment-system-backend.onrender.com/api/visitor/${visitorId}`
       );
       setVisitorDetails(response.data);
     } catch (error) {
@@ -33,7 +33,7 @@ const VisitorDetails = ({ isOpen, onClose, refreshList, visitorId }) => {
     if (!window.confirm("Are you sure you want to delete?")) return; // Confirm deletion
     try {
       await axios.delete(
-        `http://localhost:3500/api/visitor/delete/${visitorId}`
+        `https://prison-managment-system-backend.onrender.com/api/visitor/delete/${visitorId}`
       );
       console.log("Visitor deleted successfully");
       toast.success("Visitor Successfully Deleted ", {

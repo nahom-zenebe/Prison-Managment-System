@@ -1,4 +1,4 @@
-POST http://localhost:3500/inmate/addinmates
+POST https://prison-managment-system-backend.onrender.com/inmate/addinmates
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3500/auth/signup
+POST https://prison-managment-system-backend.onrender.com/auth/signup
 Content-Type: application/json
 
 {
@@ -52,7 +52,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3500/auth/login
+POST https://prison-managment-system-backend.onrender.com/auth/login
 Content-Type: application/json
 
 {

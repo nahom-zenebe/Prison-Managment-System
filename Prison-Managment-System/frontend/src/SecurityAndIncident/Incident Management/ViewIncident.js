@@ -22,7 +22,7 @@ const ViewIncident = ({ isOpen, onClose, refreshList, incidentId }) => {
   const getIncidentDetails = async (incidentId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3500/api/incident/${incidentId}`
+        `https://prison-managment-system-backend.onrender.com/api/incident/${incidentId}`
       );
       setIncidentDetails(response.data);
     } catch (error) {

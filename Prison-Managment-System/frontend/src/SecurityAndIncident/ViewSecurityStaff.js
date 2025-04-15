@@ -19,7 +19,7 @@ const ViewSecurityStaff = ({ isOpen, onClose, refreshList, staffId }) => {
   const getStaffDetails = async (staffId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3500/api/securityStaff/${staffId}`
+        `https://prison-managment-system-backend.onrender.com/api/securityStaff/${staffId}`
       );
       setStaffDetails(response.data);
       console.log(response.data);

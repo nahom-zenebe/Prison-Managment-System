@@ -12,7 +12,7 @@ import "./pdfStyles.css";
 const fetchWantedInmates = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:3500/inmate/getwantedinmates"
+      "https://prison-managment-system-backend.onrender.com/inmate/getwantedinmates"
     );
     return response.data;
   } catch (error) {
@@ -92,7 +92,10 @@ function WantedInmates() {
 
   const handleUpdate = async (id, updatedData) => {
     try {
-      await axios.put(`http://localhost:3500/inmate/${id}`, updatedData);
+      await axios.put(
+        `https://prison-managment-system-backend.onrender.com/inmate/${id}`,
+        updatedData
+      );
       message.success("Inmate is added to current list successfully.");
       fetchWantedInmates().then((data) => setCurrentInmates(data));
       setIsVisibleUpdateModal(false);
@@ -104,7 +107,10 @@ function WantedInmates() {
 
   const updateWantedInmate = async (id, updatedData) => {
     try {
-      await axios.put(`http://localhost:3500/inmate/${id}`, updatedData);
+      await axios.put(
+        `https://prison-managment-system-backend.onrender.com/inmate/${id}`,
+        updatedData
+      );
       message.success("Wanted Inmate details updated successfully.");
       fetchWantedInmates().then((data) => setWantedInmates(data));
       setIsVisibleUpdateModal(false);
@@ -120,7 +126,9 @@ function WantedInmates() {
     );
     if (confirmed) {
       try {
-        await axios.delete(`http://localhost:3500/inmate/${id}`);
+        await axios.delete(
+          `https://prison-managment-system-backend.onrender.com/inmate/${id}`
+        );
         const updatedWantedInmates = wantedInmates.filter(
           (inmate) => inmate._id !== id
         );
@@ -178,7 +186,7 @@ function WantedInmates() {
               {selectedInmate.image ? (
                 <img
                   className="image"
-                  src={`http://localhost:3500/uploads/${selectedInmate.image}`}
+                  src={`https://prison-managment-system-backend.onrender.com/uploads/${selectedInmate.image}`}
                   alt="Inmate Photo"
                   style={{
                     marginLeft: "230px",
@@ -501,7 +509,7 @@ function WantedInmates() {
                 <td onClick={() => showProfileModal(inmate)}>
                   {inmate.image ? (
                     <img
-                      src={`http://localhost:3500/uploads/${inmate.image}`}
+                      src={`https://prison-managment-system-backend.onrender.com/uploads/${inmate.image}`}
                       alt="Inmate Photo"
                       style={{ width: "100px", height: "120px" }}
                     />

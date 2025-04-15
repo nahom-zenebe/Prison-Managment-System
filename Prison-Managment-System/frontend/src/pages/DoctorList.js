@@ -23,7 +23,9 @@ const DoctorList = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("http://localhost:3500/Doctors");
+        const response = await axios.get(
+          "https://prison-managment-system-backend.onrender.com/Doctors"
+        );
         setDoctors(response.data);
         setFilteredDoctors(response.data);
       } catch (error) {
@@ -79,7 +81,10 @@ const DoctorList = () => {
 
   const updateDoctor = async (id, updatedDoctorData) => {
     try {
-      await axios.put(`http://localhost:3500/Doctors/${id}`, updatedDoctorData);
+      await axios.put(
+        `https://prison-managment-system-backend.onrender.com/Doctors/${id}`,
+        updatedDoctorData
+      );
       const updatedDoctors = doctors.map((doctor) => {
         if (doctor._id === id) {
           return { ...doctor, ...updatedDoctorData };
@@ -100,7 +105,9 @@ const DoctorList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3500/Doctors/${selectedDoctor._id}`);
+      await axios.delete(
+        `https://prison-managment-system-backend.onrender.com/Doctors/${selectedDoctor._id}`
+      );
       const updatedDoctors = doctors.filter((doctor) => doctor._id !== id);
       setDoctors(updatedDoctors);
       setFilteredDoctors(updatedDoctors);

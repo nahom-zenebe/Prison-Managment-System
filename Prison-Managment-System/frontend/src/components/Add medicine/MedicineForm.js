@@ -31,7 +31,7 @@ function MedicineForm() {
     if (name === "name" && !/^[a-zA-Z\s]*$/.test(value)) {
       setErrorMessage("Name should contain only letters.");
     } else {
-      setErrorMessage(""); 
+      setErrorMessage("");
     }
 
     setInputs((prevState) => ({
@@ -64,12 +64,12 @@ function MedicineForm() {
 
   const sendRequest = async () => {
     await axios
-      .post("http://localhost:3500/medicine", {
+      .post("https://prison-managment-system-backend.onrender.com/medicine", {
         name: String(inputs.name),
         type: String(inputs.type),
         mg: String(inputs.mg),
         quantity: parseInt(inputs.quantity),
-        expire: inputs.expire, 
+        expire: inputs.expire,
         supplier: String(inputs.supplier),
         note: String(inputs.note),
       })
@@ -78,16 +78,17 @@ function MedicineForm() {
 
   return (
     <div style={{ position: "relative" }}>
-      <Sidebar/>
-      
-      <center><h1>Medicine form</h1></center>
-      <form className="form-container" onSubmit={handleSubmit}>
+      <Sidebar />
 
-      {errorMessage && (
-          <div className="form-error">{errorMessage}</div>
-        )}
+      <center>
+        <h1>Medicine form</h1>
+      </center>
+      <form className="form-container" onSubmit={handleSubmit}>
+        {errorMessage && <div className="form-error">{errorMessage}</div>}
         <div className="form-group">
-          <label className="form-label" htmlFor="name">Name</label>
+          <label className="form-label" htmlFor="name">
+            Name
+          </label>
           <input
             className="form-input"
             type="text"
@@ -97,12 +98,12 @@ function MedicineForm() {
             value={inputs.name}
             required
           />
-
-          
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="type">Type</label>
+          <label className="form-label" htmlFor="type">
+            Type
+          </label>
           <select
             className="form-input"
             name="type"
@@ -118,7 +119,9 @@ function MedicineForm() {
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="mg">MG</label>
+          <label className="form-label" htmlFor="mg">
+            MG
+          </label>
           <input
             className="form-input"
             type="text"
@@ -130,7 +133,9 @@ function MedicineForm() {
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="quantity">Quantity</label>
+          <label className="form-label" htmlFor="quantity">
+            Quantity
+          </label>
           <input
             className="form-input"
             type="text"
@@ -141,10 +146,10 @@ function MedicineForm() {
           />
         </div>
 
-       
-
         <div className="form-group">
-          <label className="form-label" htmlFor="expire">Expire</label>
+          <label className="form-label" htmlFor="expire">
+            Expire
+          </label>
           <input
             className="form-input"
             type="date"
@@ -156,7 +161,9 @@ function MedicineForm() {
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="supplier">Supplier</label>
+          <label className="form-label" htmlFor="supplier">
+            Supplier
+          </label>
           <input
             className="form-input"
             type="text"
@@ -169,7 +176,9 @@ function MedicineForm() {
         </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="note">Note</label>
+          <label className="form-label" htmlFor="note">
+            Note
+          </label>
           <input
             className="form-input"
             type="text"
@@ -181,10 +190,11 @@ function MedicineForm() {
           />
         </div>
 
-        <button className="form-button" type="submit">Submit</button>
+        <button className="form-button" type="submit">
+          Submit
+        </button>
       </form>
 
-      
       <style>
         {`
           .form-error {

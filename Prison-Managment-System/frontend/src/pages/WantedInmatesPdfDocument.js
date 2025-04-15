@@ -171,7 +171,7 @@ const WantedInmatesPDFDocument = ({ selectedInmate }) => (
             {selectedInmate.image && (
               <Image
                 source={{
-                  uri: `http://localhost:3500/uploads/${selectedInmate.image}`,
+                  uri: `https://prison-managment-system-backend.onrender.com/uploads/${selectedInmate.image}`,
                 }}
                 style={[styles.image, styles.inmateImage]}
               />

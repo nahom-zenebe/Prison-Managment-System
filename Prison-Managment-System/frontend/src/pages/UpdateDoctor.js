@@ -9,7 +9,7 @@ function UpdateDoctor({ selectedDoctor, onUpdate, updateDoctor }) {
     const fetchDoctorData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3500/Doctors/${selectedDoctor._id}`
+          `https://prison-managment-system-backend.onrender.com/Doctors/${selectedDoctor._id}`
         );
         setInputs(response.data);
       } catch (error) {

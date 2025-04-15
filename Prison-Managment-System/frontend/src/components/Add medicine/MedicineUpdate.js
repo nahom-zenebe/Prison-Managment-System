@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router';
-import { useNavigate } from 'react-router';
-import Sidebar from '../Sidebar';
-import './medicineForm.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router";
+import { useNavigate } from "react-router";
+import Sidebar from "../Sidebar";
+import "./medicineForm.css";
 
 function MedicineUpdate() {
   const [inputs, setInputs] = useState({});
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const history = useNavigate();
   const id = useParams().id;
 
   useEffect(() => {
     const fetchHandler = async () => {
       try {
-        const response = await axios.get(`http://localhost:3500/medicine/${id}`);
+        const response = await axios.get(
+          `https://prison-managment-system-backend.onrender.com/medicine/${id}`
+        );
         setInputs(response.data.medicine);
       } catch (error) {
         console.error(error);
@@ -24,7 +26,7 @@ function MedicineUpdate() {
   }, [id]);
 
   useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split("T")[0];
     setInputs((prevState) => ({
       ...prevState,
       expire: today,
@@ -33,15 +35,18 @@ function MedicineUpdate() {
 
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:3500/medicine/${id}`, {
-        name: String(inputs.name),
-        type: String(inputs.type),
-        mg: String(inputs.mg),
-        quantity: String(inputs.quantity),
-        expire: inputs.expire,
-        supplier: String(inputs.supplier),
-        note: String(inputs.note),
-      })
+      .put(
+        `https://prison-managment-system-backend.onrender.com/medicine/${id}`,
+        {
+          name: String(inputs.name),
+          type: String(inputs.type),
+          mg: String(inputs.mg),
+          quantity: String(inputs.quantity),
+          expire: inputs.expire,
+          supplier: String(inputs.supplier),
+          note: String(inputs.note),
+        }
+      )
       .then((res) => res.data);
   };
 
@@ -55,14 +60,14 @@ function MedicineUpdate() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!/^[a-zA-Z]+$/.test(inputs.name)) {
-      setErrorMessage('Name should contain only letters.');
+      setErrorMessage("Name should contain only letters.");
       return;
     }
     if (isNaN(inputs.quantity)) {
-      setErrorMessage('You cannot enter text for quantity.');
+      setErrorMessage("You cannot enter text for quantity.");
       return;
     }
-    sendRequest().then(() => history('/mainmedical'));
+    sendRequest().then(() => history("/mainmedical"));
   };
 
   const handleKeyDown = (e) => {
@@ -78,8 +83,7 @@ function MedicineUpdate() {
       <center>
         <h1>Medicine update</h1>
         <form className="form-container" onSubmit={handleSubmit}>
-
-        {errorMessage && <div className="form-error">{errorMessage}</div>}
+          {errorMessage && <div className="form-error">{errorMessage}</div>}
           <div className="form-group">
             <label className="form-label" htmlFor="name">
               Name
@@ -141,8 +145,6 @@ function MedicineUpdate() {
             />
           </div>
 
-         
-
           <div className="form-group">
             <label className="form-label" htmlFor="expire">
               Expire
@@ -184,7 +186,9 @@ function MedicineUpdate() {
               required
             />
           </div>
-          <button className="form-button" type="submit">Update</button>
+          <button className="form-button" type="submit">
+            Update
+          </button>
         </form>
       </center>
     </div>

@@ -15,7 +15,9 @@ const Staff = () => {
 
   const fetchData = async () => {
     try {
-      const jailorResponse = await axios.get("http://localhost:3500/Jailors");
+      const jailorResponse = await axios.get(
+        "https://prison-managment-system-backend.onrender.com/Jailors"
+      );
       setJailors(jailorResponse.data);
     } catch (err) {
       console.error("Error Fetching Jailors:", err.message);

@@ -3,14 +3,14 @@ import Sidebar from "../Sidebar";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./medicine.css";
-import "./medicinePrint.css"
+import "./medicinePrint.css";
 import { useReactToPrint } from "react-to-print";
 
-const URL = "http://localhost:3500/medicine";
+const URL = "https://prison-managment-system-backend.onrender.com/medicine";
 
 function Medicine() {
   const [users, setUsers] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [showAlert, setShowAlert] = useState(false); // State for showing the alert
   const [printableRecord, setPrintableRecord] = useState(null); // State to hold the printable record
   const componentRef = useRef(); // Reference to the MedicinePrint component
@@ -33,7 +33,9 @@ function Medicine() {
   }, []);
 
   const deleteHandler = async (medicineId) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this medicine?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this medicine?"
+    );
     if (!confirmDelete) {
       return; // If user cancels, exit the function
     }
@@ -93,9 +95,7 @@ function Medicine() {
       <center>
         {/* Alert box */}
         {showAlert && (
-          <div className="alert-box">
-            Medicine deleted successfully!
-          </div>
+          <div className="alert-box">Medicine deleted successfully!</div>
         )}
 
         <h1>Medical resources </h1>
@@ -168,29 +168,34 @@ function Medicine() {
 
       {/* Printable record */}
       {printableRecord && (
+        <div style={{ display: "none" }}>
+          <div className="printable-record" ref={componentRef}>
+            <h1 className="medtitle">Medicine Records</h1>
+            <div className="meddetailset">
+              <p className="meddetails">Name :{printableRecord.name}</p>
+              <p className="meddetails">Type: {printableRecord.type}</p>
+              <p className="meddetails">MG: {printableRecord.mg}</p>
+              <p className="meddetails">Quantity: {printableRecord.quantity}</p>
+              <p className="meddetails">
+                Expire Date: {formatDate(printableRecord.expire)}
+              </p>
+              <p className="meddetails">Supplier: {printableRecord.supplier}</p>
+              <p className="meddetails">Note: {printableRecord.note}</p>
+            </div>
 
-      <div style={{ display: "none" }}>
-
-        <div className="printable-record" ref={componentRef}>
-          <h1 className="medtitle">Medicine Records</h1>
-          <div className="meddetailset">
-          <p className="meddetails">Name :{printableRecord.name}</p>
-          <p className="meddetails">Type: {printableRecord.type}</p>
-          <p className="meddetails">MG: {printableRecord.mg}</p>
-          <p className="meddetails">Quantity: {printableRecord.quantity}</p>
-          <p className="meddetails">Expire Date: {formatDate(printableRecord.expire)}</p>
-          <p className="meddetails">Supplier: {printableRecord.supplier}</p>
-          <p className="meddetails">Note: {printableRecord.note}</p>
-
+            <div className="footer-container">
+              <p className="footer-date">
+                Date: ........./........./.............
+              </p>
+              <p className="footer-check">
+                Checked By: ..................................
+              </p>
+              <p className="footer-signature">
+                Signature: ..............................
+              </p>
+            </div>
           </div>
-
-          <div className="footer-container">
-    <p className="footer-date">Date: ........./........./.............</p>
-    <p className="footer-check">Checked By: ..................................</p>
-    <p className="footer-signature">Signature: ..............................</p>
-  </div>
         </div>
-      </div>
       )}
     </div>
   );

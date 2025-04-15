@@ -44,7 +44,7 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
   const getVisitorDetails = async (visitorId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3500/api/visitor/${visitorId}`
+        `https://prison-managment-system-backend.onrender.com/api/visitor/${visitorId}`
       );
       setVisitorDetails(response.data);
     } catch (error) {
@@ -80,15 +80,18 @@ const CreateVisit = ({ isOpen, onClose, refreshList, visitorId }) => {
 
     try {
       // Make an HTTP POST request to save the visit details
-      const response = await axios.post("http://localhost:3500/api/visit/add", {
-        visitorName: `${visitorDetails.firstName} ${visitorDetails.lastName}`,
-        nic: visitorDetails.nic,
-        inmateNo: visitorDetails.inmateNo,
-        dateOfVisit: formatDate(visitorDetails.dateOfVisit),
-        checkInTime: visitorDetails.timeOfVisit,
-        checkOutTime: checkoutTime,
-        duration: checkoutTime ? duration : null, // Set duration as null if checkout time is empty
-      });
+      const response = await axios.post(
+        "https://prison-managment-system-backend.onrender.com/api/visit/add",
+        {
+          visitorName: `${visitorDetails.firstName} ${visitorDetails.lastName}`,
+          nic: visitorDetails.nic,
+          inmateNo: visitorDetails.inmateNo,
+          dateOfVisit: formatDate(visitorDetails.dateOfVisit),
+          checkInTime: visitorDetails.timeOfVisit,
+          checkOutTime: checkoutTime,
+          duration: checkoutTime ? duration : null, // Set duration as null if checkout time is empty
+        }
+      );
       console.log(response.message);
 
       // Trigger printing of PDF upon successful visit submission

@@ -25,7 +25,10 @@ function DoctorForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3500/Doctors", formData);
+      await axios.post(
+        "https://prison-managment-system-backend.onrender.com/Doctors",
+        formData
+      );
       console.log("Form submitted successfully!");
     } catch (error) {
       console.error("Error:", error);

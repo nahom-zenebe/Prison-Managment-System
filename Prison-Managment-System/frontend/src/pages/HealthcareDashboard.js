@@ -25,7 +25,7 @@ function HealthcareDashboard() {
 
       // Fetch count of current appointments for the last 7 days
       const currentAppointmentsResponse = await axios.get(
-        "http://localhost:3500/appointment/findall"
+        "https://prison-managment-system-backend.onrender.com/appointment/findall"
       );
       const currentAppointments = currentAppointmentsResponse.data.filter(
         (appointment) => {
@@ -39,7 +39,7 @@ function HealthcareDashboard() {
 
       // Fetch count of approved appointments for the last 7 days
       const approvedAppointmentsResponse = await axios.get(
-        "http://localhost:3500/appointment/approved"
+        "https://prison-managment-system-backend.onrender.com/appointment/approved"
       );
       const approvedAppointments = approvedAppointmentsResponse.data.filter(
         (appointment) => {
@@ -53,7 +53,7 @@ function HealthcareDashboard() {
 
       // Fetch count of health records
       const healthRecordsResponse = await axios.get(
-        "http://localhost:3500/healthrecord/healthrecords"
+        "https://prison-managment-system-backend.onrender.com/healthrecord/healthrecords"
       );
       const healthRecordsCount = healthRecordsResponse.data.length;
 

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './healthRecordForm.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./healthRecordForm.css";
 
 const HealthRecordForm = ({ inmateName }) => {
   const [formData, setFormData] = useState({
     InmateName: inmateName,
-    dateOfBirth: '',
-    diagnosis: '',
-    medications: '',
-    notes: ''
+    dateOfBirth: "",
+    diagnosis: "",
+    medications: "",
+    notes: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -17,30 +17,42 @@ const HealthRecordForm = ({ inmateName }) => {
   const validateInmateName = (value) => {
     const regex = /^[a-zA-Z. ]+$/;
     if (!value.match(regex)) {
-      setErrors(prev => ({ ...prev, InmateName: 'Inmate Name must include only letters and "." symbol.' }));
+      setErrors((prev) => ({
+        ...prev,
+        InmateName: 'Inmate Name must include only letters and "." symbol.',
+      }));
     } else {
-      setErrors(prev => ({ ...prev, InmateName: '' }));
+      setErrors((prev) => ({ ...prev, InmateName: "" }));
     }
   };
 
   const validateDateOfBirth = (value) => {
     const dob = new Date(value);
     const today = new Date();
-    const hundredYearsAgo = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate());
-    const eighteenYearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+    const hundredYearsAgo = new Date(
+      today.getFullYear() - 100,
+      today.getMonth(),
+      today.getDate()
+    );
+    const eighteenYearsAgo = new Date(
+      today.getFullYear() - 18,
+      today.getMonth(),
+      today.getDate()
+    );
 
     if (dob > today || dob < hundredYearsAgo) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        dateOfBirth: 'Date of Birth must be within the last 100 years and not in the future.'
+        dateOfBirth:
+          "Date of Birth must be within the last 100 years and not in the future.",
       }));
     } else if (dob > eighteenYearsAgo) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        dateOfBirth: 'Person must be at least 18 years old.'
+        dateOfBirth: "Person must be at least 18 years old.",
       }));
     } else {
-      setErrors(prev => ({ ...prev, dateOfBirth: '' }));
+      setErrors((prev) => ({ ...prev, dateOfBirth: "" }));
     }
   };
 
@@ -48,38 +60,42 @@ const HealthRecordForm = ({ inmateName }) => {
     const { name, value } = e.target;
 
     // Apply filter on diagnosis input
-    const filteredValue = name === 'diagnosis' ? value.replace(/[^a-zA-Z\s]/g, '') : value;
+    const filteredValue =
+      name === "diagnosis" ? value.replace(/[^a-zA-Z\s]/g, "") : value;
 
-    setFormData(prev => ({ ...prev, [name]: filteredValue }));
+    setFormData((prev) => ({ ...prev, [name]: filteredValue }));
 
-    if (name === 'InmateName') validateInmateName(filteredValue);
-    if (name === 'dateOfBirth') validateDateOfBirth(filteredValue);
+    if (name === "InmateName") validateInmateName(filteredValue);
+    if (name === "dateOfBirth") validateDateOfBirth(filteredValue);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (Object.values(errors).some(error => error !== '')) {
-      alert('Please fix the errors before submitting.');
+    if (Object.values(errors).some((error) => error !== "")) {
+      alert("Please fix the errors before submitting.");
       return;
     }
 
     try {
-      const response = await axios.post('http://localhost:3500/healthrecord/addhealthrecords', formData);
-      console.log('Success:', response.data);
-      alert('Health record added successfully');
+      const response = await axios.post(
+        "https://prison-managment-system-backend.onrender.com/healthrecord/addhealthrecords",
+        formData
+      );
+      console.log("Success:", response.data);
+      alert("Health record added successfully");
       setFormData({
         InmateName: inmateName,
-        dateOfBirth: '',
-        diagnosis: '',
-        medications: '',
-        notes: ''
+        dateOfBirth: "",
+        diagnosis: "",
+        medications: "",
+        notes: "",
       });
       setErrors({});
       setSubmitted(true);
     } catch (error) {
-      console.error('Error:', error.response?.data || error.message);
-      alert('Failed to add health record');
+      console.error("Error:", error.response?.data || error.message);
+      alert("Failed to add health record");
     }
   };
 
@@ -95,9 +111,10 @@ const HealthRecordForm = ({ inmateName }) => {
             name="InmateName"
             value={formData.InmateName}
             onChange={handleChange}
-      
           />
-          {errors.InmateName && <span className="error">{errors.InmateName}</span>}
+          {errors.InmateName && (
+            <span className="error">{errors.InmateName}</span>
+          )}
         </div>
 
         <div className="formGroup">
@@ -110,7 +127,9 @@ const HealthRecordForm = ({ inmateName }) => {
             onChange={handleChange}
             required
           />
-          {errors.dateOfBirth && <span className="error">{errors.dateOfBirth}</span>}
+          {errors.dateOfBirth && (
+            <span className="error">{errors.dateOfBirth}</span>
+          )}
         </div>
 
         <div className="formGroup">
@@ -149,7 +168,9 @@ const HealthRecordForm = ({ inmateName }) => {
           />
         </div>
 
-        <button className="addHealthrecordButton" type="submit">Submit</button>
+        <button className="addHealthrecordButton" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

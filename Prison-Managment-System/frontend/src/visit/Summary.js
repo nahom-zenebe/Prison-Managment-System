@@ -16,7 +16,9 @@ const Summary = () => {
 
   const getAllVisits = async () => {
     try {
-      const res = await axios.get("http://localhost:3500/api/visit");
+      const res = await axios.get(
+        "https://prison-managment-system-backend.onrender.com/api/visit"
+      );
       setVisits(res.data);
     } catch (error) {
       console.error("Error fetching visits:", error);

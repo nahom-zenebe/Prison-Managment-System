@@ -8,7 +8,9 @@ const VisitDetails = ({ visitorData, handleChange, errors }) => {
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:3500/api/visit");
+      const response = await axios.get(
+        "https://prison-managment-system-backend.onrender.com/api/visit"
+      );
       setInmateData(response.data);
       console.log(response.data);
     } catch (e) {

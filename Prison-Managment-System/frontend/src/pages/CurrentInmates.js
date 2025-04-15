@@ -12,7 +12,8 @@ import Content from "../components/Content";
 import SideNavbar from "../components/SideNavbar";
 import CurrentInmatesPDFDocument from "./CurrentInmatePDFDownload";
 
-const URL = "http://localhost:3500/inmate/getcurrentinmates";
+const URL =
+  "https://prison-managment-system-backend.onrender.com/inmate/getcurrentinmates";
 
 const fetchHandler = async () => {
   try {
@@ -109,7 +110,10 @@ function CurrentInmate() {
 
   const handleUpdate = async (id, updatedData) => {
     try {
-      await axios.put(`http://localhost:3500/inmate/${id}`, updatedData);
+      await axios.put(
+        `https://prison-managment-system-backend.onrender.com/inmate/${id}`,
+        updatedData
+      );
       message.success("Inmate details updated successfully.");
       fetchHandler().then((data) => setCurrentInmates(data));
       setIsVisibleUpdateModal(false);
@@ -122,7 +126,7 @@ function CurrentInmate() {
   const deleteModelHandler = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:3500/inmate/${selectedInmateForDeletion._id}`
+        `https://prison-managment-system-backend.onrender.com/inmate/${selectedInmateForDeletion._id}`
       );
       console.log("Success:", response.data);
       message.success("Inmate details deleted successfully.");
@@ -217,7 +221,7 @@ function CurrentInmate() {
               {selectedInmate.image ? (
                 <img
                   className="image"
-                  src={`http://localhost:3500/uploads/${selectedInmate.image}`}
+                  src={`https://prison-managment-system-backend.onrender.com/uploads/${selectedInmate.image}`}
                   alt="Inmate Photo"
                   style={{
                     marginLeft: "230px",
@@ -611,7 +615,7 @@ function CurrentInmate() {
                 <td onClick={() => showProfileModal(inmate)}>
                   {inmate.image ? (
                     <img
-                      src={`http://localhost:3500/uploads/${inmate.image}`}
+                      src={`https://prison-managment-system-backend.onrender.com/uploads/${inmate.image}`}
                       alt="Inmate Photo"
                       style={{ width: "100px", height: "120px" }}
                     />

@@ -16,7 +16,9 @@ const AllVisits = () => {
   const getAllVisits = async () => {
     try {
       setIsLoading(true);
-      const res = await axios.get("http://localhost:3500/api/visit");
+      const res = await axios.get(
+        "https://prison-managment-system-backend.onrender.com/api/visit"
+      );
       setVisitData(res.data);
       setIsLoading(false);
     } catch (error) {
@@ -37,7 +39,7 @@ const AllVisits = () => {
   const confirmDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:3500/api/visit/delete/${deletingVisitId}`
+        `https://prison-managment-system-backend.onrender.com/api/visit/delete/${deletingVisitId}`
       );
       setVisitData((prevVisits) =>
         prevVisits.filter((visit) => visit._id !== deletingVisitId)
